@@ -1,0 +1,33 @@
+{% extends 'quiz/base.html' %}
+{% load staticfiles %}
+{% block body %}
+
+<div id="student_title">Have you found the right college major?</div>
+<div id="student_stats">
+	<hr>
+	<div id="statbox_title">Average College Student</div>
+	<div id="statbox_container">
+		<div class="">
+			<div class="statbox_stat">3</div>
+			<div class="statbox_txt">Declared majors</div>
+		</div>
+		<div>
+			<div class="statbox_stat">5.5</div>
+			<div class="statbox_txt">Years to graduate</div>
+		</div>
+		<div>
+			<div class="statbox_stat">$16,202</div>
+			<div class="statbox_txt">Cost per semester</div>
+		</div>
+	</div>
+</div>
+<div id="student_banner">
+	<div id="banner_txt">
+		<div>AVOID WASTING TIME AND MONEY</div>
+		<div id="start_btn"><a id="quiz_link" href="/quiz/">START YOUR JOURNEY</a></div>
+		<div>FIND A FUTURE THAT FITS</div>
+	</div>
+</div>
+
+
+{% endblock %}

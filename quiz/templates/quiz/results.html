@@ -1,0 +1,59 @@
+{% extends 'quiz/base.html' %}
+{% load staticfiles %}
+{% block body %}
+<div id="profile_result_container">
+<div class="pageTitle pageMargin" style="background:#2bb3b3;margin-bottom: 2em !important;"><span style="color:#FFF;font-family:Source Sans Pro;font-size:25px;font-weight:lighter;">RESULTS</div>
+
+	<div id="results_title" style="text-align: left;color:#2bb3b3;margin-bottom: 30px;">YOU ARE BEST SUITED FOR:</div>
+	<div id="results_container">
+		{% for major in majors %}
+			<div class="major_result_container">
+				<div class="major_result_title">&#x25cf; {{ major }}</div>
+			</div>
+		{% endfor %}
+	</div>
+
+	<hr>
+	
+	<div id="accuracy_container">
+		Your accuracy percentage is {{accuracy_percentage}}%.
+	</div>
+	<div id="results_email_desc">
+		<div>
+			To accurately calibrate your fit we need to know what your closest contacts say about you.
+		</div>
+		<div>
+			To have them answer this 4 minute questionnaire about you, we can email them for you or you can contact them yourself. You choose.
+		</div>
+	</div>
+	<div id="email_btn_container">
+		<button onClick="openEmailInputs()" class="results_email_btn">Have Raize send 1 email to each contact <br>(sample email is shown below)</button>
+		<button onClick="openEmailLink()" class="results_email_btn">Send own emails with a link</button>
+	</div>
+	<div id="email_img_container">
+		<img id="email_img" src="{% static 'raizeme/images/raize_email.JPG' %}" />
+	</div>
+</div>
+
+<div id="email_form_container">
+	<div>
+		Write in up to 10 email addresses of people who know you well.
+	</div>
+	<form id="emailForm" action="/results/" method="post">
+		{% csrf_token %}
+		<input type="hidden" value="{{ id }}" id="userId"/>
+		{{ form }}
+	</form>
+	<button type='button' class="contactEmailBtn" onClick="submitEmails()">Send</button>
+</div>
+
+<div id="email_link_container">
+	Copy the following link, and send it to people who know you well:
+
+	<div>
+		{{ link }}
+	</div>
+</div>
+
+<script type="text/javascript" src="{% static 'quiz/js/profile_results.js' %}"></script>
+{% endblock %}

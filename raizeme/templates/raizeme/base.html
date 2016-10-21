@@ -1,0 +1,26 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Raize Me</title>
+		<link rel="stylesheet" type="text/css" href="{% static 'quiz/css/style.css' %}" />
+		<link rel="stylesheet" href="{% static 'quiz/css/jquery-ui.min.css' %}">
+		<link rel="stylesheet" href="{% static 'quiz/css/ext-jquery-ui.css' %}">
+		<script type="text/javascript" src="{% static 'quiz/js/jquery-1.12.3.min.js' %}"></script>
+		<script type="text/javascript" src="{% static 'quiz/js/jquery-ui.min.js' %}"></script>
+		
+		<script type="text/javascript" src="{% static 'quiz/js/ext-jquery-ui.min.js' %}"></script>
+		<link href='https://fonts.googleapis.com/css?family=Josefin+Sans' rel='stylesheet' type='text/css'>
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+		<link rel="icon" href="{% static 'raizeme/images/favicon.png' %}"/>
+	</head>
+	<body>
+		{% block body %}
+        {% endblock %}
+
+        <script type="text/javascript">
+         	console.log("COming to Base URL");
+        </script>
+	</body>
+</html>

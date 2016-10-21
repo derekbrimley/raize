@@ -1,0 +1,86 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Raize Me</title>
+		<link rel="stylesheet" type="text/css" href="{% static 'quiz/css/style.css' %}" />
+		<link rel="stylesheet" href="{% static 'quiz/css/ext-jquery-ui.css' %}">
+	 <!-- 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
+		<link rel="stylesheet" href="{% static 'quiz/css/jquery-ui.min.css' %}">
+<!--
+	<link href='https://fonts.googleapis.com/css?family=Josefin+Sans' rel='stylesheet' type='text/css'>-->
+		<link href='https://fonts.googleapis.com/css?family=Dosis:400,300,500' rel='stylesheet' type='text/css'>
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+      	<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400" rel="stylesheet">
+		<link rel="icon" href="{% static 'raizeme/images/favicon-32x32.png' %}"/>
+
+
+		<script type="text/javascript" src="{% static 'quiz/js/jquery-1.12.3.min.js' %}"></script>
+		<script type="text/javascript" src="{% static 'quiz/js/jquery-ui.min.js' %}"></script>
+		<script type="text/javascript" src="{% static 'quiz/js/jquery.ui.touch-punch.min.js' %}"></script>
+		<script type="text/javascript" src="{% static 'quiz/js/ext-jquery-ui.min.js' %}"></script>
+		<script type="text/javascript" src="{% static 'quiz/js/app.js' %}"></script>
+<!--		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
+
+
+	</head>
+	<body>
+		<div id="header">
+			<div id="logo_container">
+				<a href="/"><img id="logo_img" src="{% static 'raizeme/images/raize_new.gif' %}" /></a>
+			</div>
+
+			<div id="header_btn_container">
+				<a href="/students/" class="menu_btn">Student</a>
+				<a href="/graduates/" class="menu_btn">Graduate</a>
+				<a href="/team/" class="menu_btn">Raize Team</a>
+				<a href="/" class="menu_btn">Home</a>
+				{% if user.is_authenticated %}
+					<a href="/profile/" class="menu_btn">Profile</a>
+					<a href="/logout/" class="menu_btn">Log Out</a>
+				{% else %}
+					<a href="/login/" class="menu_btn">Log In</a>
+				{% endif %}
+			</div>
+		</div>
+
+		{% block body %}
+        {% endblock %}
+
+		<div id="footer">
+			<div class="footer_box" id="twitter">
+				<div>TWITTER</div>
+				<hr>
+				<div>
+					<a class="twitter-timeline"
+					   href="https://twitter.com/Raize_Me"
+					   data-height="300"
+					   data-tweet-limit="1"
+					   >
+						Tweets by Raize_Me</a>
+					<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+				</div>
+			</div>
+			<div class="footer_box" id="contact_us">
+				<div>CONTACT US</div>
+				<hr>
+				<div>
+					Tech Support<br>
+					<a class="email_link" href="mailto:tech@raizeme.com" target="_blank">tech@raizeme.com</a><br>
+					Questions<br>
+					<a class="email_link" href="mailto:tech@raizeme.com" target="_blank">questions@raizeme.com</a>
+				</div>
+			</div>
+		</div>
+		<div id="social_container" style="background-color:">
+			<a href="https://twitter.com/Raize_Me" target="_blank"><img class="social_img" src="{% static 'raizeme/images/twitter_circle.png' %}"/></a>
+			<a href="https://www.facebook.com/RaizeMe/" target="_blank"><img class="social_img" src="{% static 'raizeme/images/facebook_circle.png' %}"/></a>
+			<a href="https://www.instagram.com/FutureThatFits/" target="_blank"><img class="social_img" src="{% static 'raizeme/images/instagram-circle.png' %}"/></a>
+		</div>
+
+
+
+
+	</body>
+</html>

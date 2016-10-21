@@ -1,0 +1,21 @@
+{% extends 'quiz/base.html' %}
+{% load staticfiles %}
+{% block body %}
+<div>
+	<div class="page_title">Log In</div>
+	<hr>
+</div>
+<div id="login_container">
+	<form id="login_form" action="/login/" method="post">
+		{% csrf_token %}
+		{% if form.errors %}
+			<p>Your username and password didn't match. Please try again.</p>
+		{% endif %}
+		{{ form.username.errors }}
+		Email {{ form.username }}
+		{{ form.password.errors }}
+		Password {{ form.password }}
+		<input class="login_form_btn" type="submit"/>
+	</form>
+</div>
+{% endblock %}

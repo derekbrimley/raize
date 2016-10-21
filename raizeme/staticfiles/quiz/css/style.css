@@ -1,0 +1,152 @@
+html, body, button{
+	font-family: 'Josefin Sans', sans-serif;
+}
+
+body{
+	margin: 0;
+}
+
+
+#mainContainer{
+	margin:0 auto;
+	width:500px;
+}
+
+#quizTitle{
+	text-align: center;
+	font-size: 40pt;
+	color: #03A9F4;
+}
+
+.quizContainer{
+	height:500px;
+}
+
+.ui-state-default{
+	background: #B3E5FC !important;
+	border: 1px solid #B3E5FC !important;
+	color: #FFF !important;
+	cursor: pointer !important;
+}
+
+.ui-state-default:hover{
+	background: #03A9F4 !important;
+	border: 1px solid #03A9F4 !important;
+	color: #FFF !important;
+}
+
+.buttonContainer{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+.formBtn{
+	width: 25%;
+    border: 0;
+    height: 50pt;
+    font-size: 25pt;
+	color: #FFF;
+	cursor:pointer;
+}
+.backBtn{
+	background: #0288D1;
+}
+
+.nextBtn{
+	background: #FF9800;
+}
+
+.startBtn{
+	flex-grow: 1;
+}
+
+.registrationForm{
+	display: flex;
+	height: 90%;
+	justify-content: space-around;
+    flex-direction: column;
+}
+
+.registrationItem{
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.registrationLabel{
+	flex-grow: 0;
+    flex-shrink: 1;
+    flex-basis: 31%;
+	font-weight: bold;
+}
+
+.registrationInput{
+	flex-grow: 0;
+    flex-shrink: 1;
+    flex-basis: 68%;
+	height: 30px;
+	font-size: 20pt;
+}
+
+.pageTitle{
+	font-size: 18pt;
+	font-weight: bold;
+}
+
+.errorlist{
+	color: red;
+}
+
+.interests{
+	display: flex;
+    flex-direction: column;
+    height: 85%;
+    justify-content: space-around;
+}
+
+.ui-button-text-only .ui-button-text {
+    padding: .8em 1em !important;
+}
+
+.check:checked + label,
+.check + .ui-state-active {
+    background: #0288D1 !important;
+}
+
+.majorItem{
+	padding: 5px;
+    background: #B3E5FC;
+    color: #FFF;
+    font-size: 18pt;
+	cursor: context-menu;
+}
+
+.majorInput{
+	font-size: 18pt;
+    margin: 10px;
+}
+
+.majors{
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.addMajorBtn{
+	flex-basis: 50px;
+    border: 0;
+    height: 35px;
+    background: #03A9F4;
+    color: #FFF;
+	cursor: pointer;
+}
+
+.majorInputContainer{
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+#majorContainer{
+	display: flex;
+	
+}

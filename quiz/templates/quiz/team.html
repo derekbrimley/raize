@@ -1,0 +1,47 @@
+{% extends 'quiz/base.html' %}
+{% load staticfiles %}
+{% block body %}
+<div>
+	<div class="page_title">The Raize Team</div>
+	<hr>
+</div>
+<div id="member_box_container" class="container">
+	<div class="row">
+	<div class="member_box">
+		<div class="member_img_container"><img src="{% static 'raizeme/images/marc_face.jpg' %}" class="member_img"/></div>
+		<div class="member_name">Marc</div>
+		<div class="member_role">Operations</div>
+	</div>
+	<div class="member_box">
+		<div class="member_img_container"><img src="{% static 'raizeme/images/christie.jpg' %}" class="member_img"/></div>
+		<div class="member_name">Christie</div>
+		<div class="member_role">Marketing</div>
+	</div>
+	</div>
+	<div class="row">
+	<div class="member_box">
+		<div class="member_img_container"><img src="{% static 'raizeme/images/chris.jpg' %}" class="member_img"/></div>
+		<div class="member_name">Chris</div>
+		<div class="member_role">Data/Strategy</div>
+	</div>
+	<div class="member_box">
+		<div class="member_img_container"><img src="{% static 'raizeme/images/kavya.jpg' %}" class="member_img"/></div>
+		<div class="member_name">Kavya</div>
+		<div class="member_role">Tech/Marketing</div>
+	</div>
+	</div>
+	<div class="row">
+	<div class="member_box">
+		<div class="member_img_container"><img src="{% static 'raizeme/images/derek.jpg' %}" class="member_img"/></div>
+		<div class="member_name">Derek</div>
+		<div class="member_role">Development</div>
+	</div>
+	<div class="member_box">
+		<div class="member_img_container"><img src="{% static 'raizeme/images/phil.jpg' %}" class="member_img" style="border-radius: 50%" /></div>
+		<div class="member_name">Phil</div>
+		<div class="member_role">Data/Strategy</div>
+	</div>
+	</div>
+	
+</div>
+{% endblock %}

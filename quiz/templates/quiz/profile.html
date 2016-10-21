@@ -1,0 +1,21 @@
+{% extends 'quiz/base.html' %}
+{% load staticfiles %}
+
+{% block body %}
+	<div id="profile_container">
+		<form id="profile_form" action="/profile/" method="post">
+			<div id="profile_form_title">Profile Information</div>
+			{% csrf_token %}
+			{{ form }}
+			<input class="login_form_btn" type="submit" value="Submit"/>
+		</form>
+	</div>
+	<div id="profile_results_container">
+		<button id='view_results_btn' type="button"><a style="text-decoration:none;color:#FFF" href="/quiz/{{ user_id }}/profile_results/">View Results</a></button>
+	</div>
+<!--
+	<div>
+		<div>Edit</div>
+	</div>
+-->
+{% endblock%}
