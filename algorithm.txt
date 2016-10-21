@@ -1,0 +1,89 @@
+Input from user:
+
+value_1 - PC
+value_2 - 
+value_3
+value_4
+value_5
+value_6
+value_7
+value_8
+value_9
+value_10
+interest_1
+interest_2
+interest_3
+interest_4
+interest_5
+interest_6
+interest_7
+interest_8
+interest_9
+interest_10
+interest_11
+interest_12
+interest_13
+interest_14
+interest_15
+interest_16
+interest_17
+interest_18
+adjective_1
+adjective_2
+adjective_3
+adjective_4
+adjective_5
+adjective_6
+adjective_7
+adjective_8
+adjective_9
+adjective_10
+adjective_11
+adjective_12
+metric_1
+metric_2
+metric_3
+metric_4
+metric_5
+metric_6
+metric_7
+metric_8
+metric_9
+metric_10
+metric_11
+metric_12
+metric_13
+metric_14
+metric_15
+metric_16
+metric_17
+metric_18
+major_1
+major_2
+major_3
+major_4
+major_5
+
+
+convert these 57 data points into 21 somehow 
+
+then do one of two things: logistics regression
+- need constants
+- 69 different functions
+- 69 different outputs (from 0 to 1)
+- choose top x closest to 1
+
+OR
+
+module in python -knn
+-download function
+3 things: 
+1. training set (existing database, the one with 2000 responders, 21 datapoints)
+2. results of training set (actual major)
+3. test set (matrix of data, 21 datapoints)
+- choose number of closest neighbors to return
+
+
+modulized
+-write code so that the 21 variable are the input, then there is the processing (where the python module should be), then the output. all separate.
+
