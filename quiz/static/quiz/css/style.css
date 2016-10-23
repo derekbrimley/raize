@@ -786,6 +786,74 @@ ol{
 	background: rgb(43, 179, 179);
 }
 
+.emails{
+	display: flex;
+    padding: 10px;
+    justify-content: flex-start;
+    height: 80%;
+    flex-direction: column;
+}
+
+.addEmailBtn{
+	border: 0;
+    font-size: 18pt;
+    color: #FFF;
+    background: #08AAF4;
+	cursor: pointer;
+}
+
+.emailInput{
+	font-size: 14pt;
+    margin: 10px;
+}
+
+
+
+#results_container{
+	display:flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	margin: 80px 130px;
+}
+
+.major_result_container{
+	flex-basis: 50%;
+	height:75px;
+	display: block;
+    justify-content: center;
+}
+
+.major_result_title{
+	font-size: 18pt;
+}
+
+#accuracy_container{
+	margin: 20px;
+	text-align: center;
+	font-size: 18pt;
+}
+
+#results_email_desc{
+	text-align: center;
+	font-size: 14pt;
+}
+
+#results_title{
+	text-align: center;
+	font-size: 24pt;
+    margin: 10px;
+}
+
+#email_img{
+	width: 500px;
+}
+
+.results_email_btn{
+	font-size: 14pt;
+    color: #FFF;
+    border: 0;
+}
+
 .nextBtn{
 	background: rgb(43, 179, 179);
 }
@@ -884,76 +952,6 @@ ol{
 }
 
 #majorContainer{
-	display: flex;
-
-}
-
-.emails{
-	display: flex;
-    padding: 10px;
-    justify-content: flex-start;
-    height: 80%;
-    flex-direction: column;
-}
-
-.addEmailBtn{
-	border: 0;
-    font-size: 18pt;
-    color: #FFF;
-    background: #08AAF4;
-	cursor: pointer;
-}
-
-.emailInput{
-	font-size: 14pt;
-    margin: 10px;
-}
-
-
-
-#results_container{
-	display:flex;
-	flex-wrap: wrap;
-	justify-content: space-around;
-	margin: 80px 130px;
-}
-
-.major_result_container{
-	flex-basis: 50%;
-	height:75px;
-	display: block;
-    justify-content: center;
-}
-
-.major_result_title{
-	font-size: 18pt;
-}
-
-#accuracy_container{
-	margin: 20px;
-	text-align: center;
-	font-size: 18pt;
-}
-
-#results_email_desc{
-	text-align: center;
-	font-size: 14pt;
-}
-
-#results_title{
-	text-align: center;
-	font-size: 24pt;
-    margin: 10px;
-}
-
-#email_img{
-	width: 500px;
-}
-
-.results_email_btn{
-	font-size: 14pt;
-    color: #FFF;
-    border: 0;
     background: #2ea1a7;
     flex: 1;
 	margin: 10px;
@@ -1038,4 +1036,8 @@ ol{
 
 .ui-widget-header{
 	background: #03A9F4 !important;
+}
+
+#already_graduated {
+    margin-top: 60px;
 }

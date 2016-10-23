@@ -110,8 +110,8 @@
 <div class="progress-label">0%</div>
 </section>
 <div id="mainContainer">
-	<div id="quizTitle">Welcome to the Raize self-assessment!</div>
 	<div id="homeContainer">
+        <div id="quizTitle">Welcome to the Raize self-assessment!</div>
 		<div class="quizContainer firstPage">
             {{ form.email.errors }}
 			<div>This 8-minute survey will help you understand your attributes and better identify a future that fits. The progress bar at the top will let you know how much you have left to complete.</div><br>
@@ -129,7 +129,7 @@
 -->
 		</div>
 		<div class="buttonContainer startContainer">
-			<button id="startBtn" class="nextBtn formBtn startBtn" onClick="startQuiz()">Start</button>
+			<button id="startBtn" class="nextBtn formBtn startBtn" onClick="nextPage()">Start</button>
 		</div>
 	</div>
 	<form id="quiz_form" action="/quiz/" method="post">
@@ -183,7 +183,7 @@
 			</div>
 			<div class="buttonContainer">
 				<button class="backBtn formBtn" type="button" id="valuesBackBtn" onClick="backToHome()">Back</button>
-				<button class="nextBtn formBtn" type="button" id="valuesNextBtn" onClick="goToInterests()">Next</button>
+                <button class="nextBtn formBtn" type="button" id="valuesNextBtn" onClick="nextPage()">Next</button>
 			</div>
 		</div>
 		<div id="interestsContainer">
@@ -281,7 +281,7 @@
 			</div>
 			<div class="buttonContainer">
 				<button class="backBtn formBtn" type="button" onClick="backToValues()">Back</button>
-				<button class="nextBtn formBtn" type="button" id="interestsNextBtn" onClick="goToAdjectives()">Next</button>
+                <button class="nextBtn formBtn" type="button" id="interestsNextBtn" onClick="nextPage()">Next</button>
 			</div>
 		</div>
 		<!--
@@ -365,7 +365,7 @@
 			</div>
 			<div class="buttonContainer">
 				<button class="backBtn formBtn" type="button" onClick="backToInterests()">Back</button>
-				<button class="nextBtn formBtn" type="button" id="adjectivesNextBtn" onClick="goToPersonality()">Next</button>
+                <button class="nextBtn formBtn" type="button" id="adjectivesNextBtn" onClick="nextPage()">Next</button>
 			</div>
 		</div>
 		<div id="personalityContainer">
@@ -397,7 +397,7 @@
 			</div>
 			<div class="buttonContainer">
 				<button class="backBtn formBtn" type="button" onClick="backToAdjectives()">Back</button>
-				<button class="nextBtn formBtn" type="button" id="personalityNextBtn" onClick="goToPersonality2()">Next</button>
+                <button class="nextBtn formBtn" type="button" id="personalityNextBtn" onClick="nextPage()">Next</button>
 			</div>
 		</div>
 		<div id="personalityContainer2">
@@ -429,7 +429,7 @@
 			</div>
 			<div class="buttonContainer">
 				<button class="backBtn formBtn" type="button" onClick="backToPersonality()">Back</button>
-				<button class="nextBtn formBtn" type="button" id="personalityNextBtn2" onClick="goToPersonality3()">Next</button>
+                <button class="nextBtn formBtn" type="button" id="personalityNextBtn2" onClick="nextPage()">Next</button>
 			</div>
 		</div>
 		<div id="personalityContainer3">
@@ -476,7 +476,7 @@
 			</div>
 			<div class="buttonContainer">
 				<button class="backBtn formBtn" type="button" onClick="backToPersonality2()">Back</button>
-				<button class="nextBtn formBtn" type="button" id="personalityNextBtn2" onClick="goToMajors()">Next</button>
+                <button class="nextBtn formBtn" type="button" id="personalityNextBtn2" onClick="nextPage()">Next</button>
 			</div>
 		</div>
 <!--

@@ -100,15 +100,15 @@ $(function () {
 //		"Transportation"
 //	];
 
-	$("#majorInput").autocomplete({
-		source: majors,
-		change: function(event,ui){
-			if (ui.item==null){
-				$("#majorInput").val('');
-				$("#majorInput").focus();
-			}
-        }
-	});
+//	$("#majorInput").autocomplete({
+//		source: majors,
+//		change: function(event,ui){
+//			if (ui.item==null){
+//				$("#majorInput").val('');
+//				$("#majorInput").focus();
+//			}
+//        }
+//	});
 
 	$("#id_value_1").val(5);
 	$("#id_value_2").val(5);
@@ -173,7 +173,6 @@ $(function () {
 	$("#id_metric_16").val( 6 );
 	$("#id_metric_17").val( 7 );
 	$("#id_metric_18").val( 8 );
-
 
 	$(".sortable").sortable({
 		stop: function( event, ui){
@@ -690,6 +689,34 @@ $(function () {
 });//ready
 
 //FORM VALUES
+var currentPage = 0;
+var quizPages = [
+    $("#homeContainer"),
+    $("#valuesContainer"),
+    $("#interestsContainer"),
+    $("#adjectivesContainer"),
+    $("#personalityContainer"),
+    $("#personalityContainer2"),
+    $("#personalityContainer3"),
+    $("#registrationContainer")
+]
+
+
+var iterateArray = function (arr) {
+    var cur = 0;
+    arr.current = (function () { return this[cur]; });
+    arr.next = (function () { 
+        return (++cur >= this.length) ? undefined : this[cur]; 
+    });
+    arr.prev = (function () { 
+        return (--cur < 0) ? undefined : this[cur]; 
+    });
+    return arr;
+};
+
+iterateArray(quizPages);
+
+var progressbarValue = 0;
 
 var value_1_value = '';
 var value_2_value = '';
@@ -753,22 +780,11 @@ var metric_16_value = '';
 var metric_17_value = '';
 var metric_18_value = '';
 
-var major_1_value = '';
-var major_2_value = '';
-var major_3_value = '';
-var major_4_value = '';
-var major_5_value = '';
-
-var email_1_value = '';
-var email_2_value = '';
-var email_3_value = '';
-var email_4_value = '';
-var email_5_value = '';
-var email_6_value = '';
-var email_7_value = '';
-var email_8_value = '';
-var email_9_value = '';
-var email_10_value = '';
+//var major_1_value = '';
+//var major_2_value = '';
+//var major_3_value = '';
+//var major_4_value = '';
+//var major_5_value = '';
 
 var first_name_value = '';
 var last_name_value = '';
@@ -786,24 +802,28 @@ var scrollToTop = function(){
 	window.scrollTo(0,0);
 }
 
+var nextPage = function () {
+    quizPages.current().hide();
+    quizPages.next().show();
+    
+    progressbarValue += 12.5;
+    $("#progressbar").progressbar("value",progressbarValue);
+    
+    scrollToTop();
+}
+
+var prevPage = function () {
+    quizPages.current().hide();
+    quizPages.prev().show();
+    
+    progressbarValue -= 12.5;
+    $("#progressbar").progressbar("value",progressbarValue);
+    
+    scrollToTop();
+}
+
 var startQuiz = function(){
 
-//	if($("#choiceBtnCollege").is(':checked') || $("#choiceBtnMajor").is(':checked') || $("#choiceBtnCompany").is(':checked')){
-//		if($("#choiceBtnCollege").is(':checked')){
-//
-//		}else if($("#choiceBtnMajor").is(':checked')){
-//
-//		}else if($("#choiceBtnCompany").is(':checked')){
-//
-//		}
-//		$("#homeContainer").hide();
-//		$("#quizTitle").hide();
-//
-//		$("#valuesContainer").show();
-//		scrollToTop();
-//	}else{
-//		alert("Please select an option.");
-//	}
 	$("#homeContainer").hide();
     $("#quizTitle").hide();
 
@@ -820,23 +840,7 @@ var goToInterests = function(){
 	scrollToTop();
 	$("#progressbar").progressbar("value",25);
 }
-/*
-var goToInterests2 = function(){
-	$("#interestsContainer").hide();
 
-	$("#interestsContainer2").show();
-	scrollToTop();
-	$("#progressbar").progressbar("value",30);
-}
-
-var goToInterests3 = function(){
-	$("#interestsContainer2").hide();
-
-	$("#interestsContainer3").show();
-	scrollToTop();
-	$("#progressbar").progressbar("value",40);
-}
-*/
 var goToAdjectives = function(){
 	if(!interest_1_value && !interest_2_value && !interest_3_value && !interest_4_value && !interest_5_value && !interest_6_value && !interest_7_value && !interest_8_value && !interest_9_value && !interest_10_value && !interest_11_value && !interest_12_value && !interest_13_value && !interest_14_value && !interest_15_value && !interest_16_value && !interest_17_value && !interest_18_value){
 		alert("You must select at least one interest.");
@@ -892,21 +896,6 @@ var goToMajors = function(){
 	$("#progressbar").progressbar("value",87.5);
 }
 
-//var goToFriends = function(){
-//	$("#majorsContainer").hide();
-//
-//	$("#friendsContainer").show();
-//	scrollToTop();
-//}
-
-//var goToRegistration = function(){
-//	$("#majorsContainer").hide();
-//
-//	$("#registrationContainer").show();
-//	scrollToTop();
-//	$("#progressbar").progressbar("value",100);
-//}
-
 var goToEnd = function(){
 
 }
@@ -926,53 +915,34 @@ var backToValues = function(){
     $("#progressbar").progressbar("value",12.5);
 }
 
-var backToInterests = function(){
-	$("#adjectivesContainer").hide();
-	$("#interestsContainer").show();
-	scrollToTop();
-    $("#progressbar").progressbar("value",25);
-}
-/*
-var backToInterests2 = function(){
-	$("#interestsContainer3").hide();
-	$("#interestsContainer2").show();
-	scrollToTop();
-    $("#progressbar").progressbar("value",30);
-}
-
-var backToInterests3 = function(){
-	$("#adjectivesContainer").hide();
-	$("#interestsContainer3").show();
-	scrollToTop();
-    $("#progressbar").progressbar("value",40);
-}
-*/
-var backToAdjectives = function(){
-	$("#personalityContainer").hide();
-	$("#adjectivesContainer").show();
-	scrollToTop();
-    $("#progressbar").progressbar("value",37.5);
-}
-
-var backToPersonality = function(){
-	$("#personalityContainer2").hide();
-	$("#personalityContainer").show();
-	scrollToTop();
-    $("#progressbar").progressbar("value",50);
-}
-
-var backToPersonality2 = function(){
-	$("#personalityContainer3").hide();
-	$("#personalityContainer2").show();
-	scrollToTop();
-    $("#progressbar").progressbar("value",62.5);
-}
-
-//var backToPersonality3 = function(){
-//	$("#majorsContainer").hide();
-//	$("#personalityContainer3").show();
+//var backToInterests = function(){
+//	$("#adjectivesContainer").hide();
+//	$("#interestsContainer").show();
 //	scrollToTop();
+//    $("#progressbar").progressbar("value",25);
 //}
+//
+//var backToAdjectives = function(){
+//	$("#personalityContainer").hide();
+//	$("#adjectivesContainer").show();
+//	scrollToTop();
+//    $("#progressbar").progressbar("value",37.5);
+//}
+//
+//var backToPersonality = function(){
+//	$("#personalityContainer2").hide();
+//	$("#personalityContainer").show();
+//	scrollToTop();
+//    $("#progressbar").progressbar("value",50);
+//}
+//
+//var backToPersonality2 = function(){
+//	$("#personalityContainer3").hide();
+//	$("#personalityContainer2").show();
+//	scrollToTop();
+//    $("#progressbar").progressbar("value",62.5);
+//}
+
 
 var backToMajors = function(){
 	$("#registrationContainer").hide();
@@ -980,12 +950,6 @@ var backToMajors = function(){
 	scrollToTop();
     $("#progressbar").progressbar("value",75);
 }
-
-//var backToEmails = function(){
-//	$("#registrationContainer").hide();
-//	$("#friendsContainer").show();
-//	scrollToTop();
-//}
 
 var addMajor = function(){
 	if(majorNum < 6){
@@ -1025,23 +989,6 @@ var addMajor = function(){
 		alert("You can only choose five majors.");
 	}
 }
-
-//var addEmailInput = function(){
-//	if(emailNum == 1){
-//		$("#id_email_3").prop('type', 'text');
-//		$("#id_email_3").prop('placeholder', 'Email');
-//	}else if (emailNum == 2){
-//		$("#id_email_4").prop('type', 'text');
-//		$("#id_email_4").prop('placeholder', 'Email');
-//	}
-//	else if (emailNum == 3){
-//		$("#id_email_5").prop('type', 'text');
-//		$("#id_email_5").prop('placeholder', 'Email');
-//	}else{
-//		alert("You can only send to five people.");
-//	}
-//	emailNum++;
-//}
 
 var submitQuiz = function(){
 
