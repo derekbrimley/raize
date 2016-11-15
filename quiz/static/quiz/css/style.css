@@ -853,6 +853,9 @@ ol{
 	font-size: 14pt;
     color: #FFF;
     border: 0;
+    margin: 10px;
+    background: #2bb3b3;
+    cursor: pointer;
 }
 
 .nextBtn{
@@ -968,6 +971,8 @@ ol{
 #email_btn_container{
 	display: flex;
     flex-wrap: wrap;
+    justify-content: center;
+    margin: 20px;
 }
 
 #email_img_container{
