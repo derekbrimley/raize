@@ -962,11 +962,6 @@ var submitQuiz = function(){
 	password_value = $("#id_password").val();
 	password2_value = $("#id_password2").val();
 
-	console.log("Last Name: " + last_name_value);
-	console.log("Email: " + email_value);
-	console.log("Password: " + password_value);
-	console.log("Password 2: " + password2_value);
-
 	console.log("Value 1: " + value_1_value);
 	console.log("Value 2: " + value_2_value);
 	console.log("Value 3: " + value_3_value);
@@ -997,18 +992,6 @@ var submitQuiz = function(){
 	console.log("Metric 9: " + metric_9_value);
 	console.log("Metric 10: " + metric_10_value);
 
-	console.log("Major 1: " + major_1_value);
-	console.log("Major 2: " + major_2_value);
-	console.log("Major 3: " + major_3_value);
-	console.log("Major 4: " + major_4_value);
-	console.log("Major 5: " + major_5_value);
-
-	console.log("Email 1: '" + email_1_value + "'");
-	console.log("Email 2: " + email_2_value);
-	console.log("Email 3: " + email_3_value);
-	console.log("Email 4: " + email_4_value);
-	console.log("Email 5: " + email_5_value);
-
 	console.log("First Name: " + first_name_value);
 	console.log("Last Name: " + last_name_value);
 	console.log("Email: " + email_value);
@@ -1023,11 +1006,7 @@ var submitQuiz = function(){
 	}else  */
 
 
-	if(!emailCheck(email_1_value) || !emailCheck(email_2_value) || !emailCheck(email_3_value) || !emailCheck(email_4_value) || !emailCheck(email_5_value)){
-		alert("Invalid email!");
-		$("#registrationContainer").hide();
-		$("#friendsContainer").show();
-	}else if(password_value != password2_value){
+	if(password_value != password2_value){
 		alert("Passwords do not match!");
 	}else if(first_name_value == '' || last_name_value == '' || email_value == '' || password_value == '' || password2_value == ''){
 		alert("Please fill out your registration information to view your results.");
