@@ -24,7 +24,7 @@
 
 .horizontal .ui-slider-labels {
 	height: 0em;
-	top:0em;
+	top:.4em;
 }
 .horizontal .ui-slider-label-ticks {
 	border-radius: 50%;
@@ -103,6 +103,15 @@
 #progressbar .ui-widget-header {
 	background: #2bb3b3 !important;
 }
+    
+    #personalityContainer .ui-state-default, #personalityContainer2 .ui-state-default, #valuesContainer .ui-state-default {
+    top: -2px;
+}
+    
+.ui-slider-wrapper .ui-slider-horizontal{
+    border-top: 0px solid #d1d7da;
+    cursor: pointer;
+}
 
 </style>
 <section>
@@ -140,42 +149,52 @@
                 <div class="pageTitle pageMargin"><span class="quiz_page_title">YOU ARE...</span></div>
 				<div class="interests">
 					<div class="subTitle">Conventional, uncreative</div>
+                    <hr class="divider">
 					<div class="valueSlider" id="value1Slider"></div>
 					{{ form.value_1.errors }}
 					{{ form.value_1 }}
 					<div class="subTitle">Disorganized, careless</div>
+                    <hr class="divider">
 					<div class="valueSlider" id="value2Slider"></div>
 					{{ form.value_2.errors }}
 					{{ form.value_2 }}
 					<div class="subTitle">Reserved, quiet</div>
+                    <hr class="divider">
 					<div class="valueSlider" id="value3Slider"></div>
 					{{ form.value_3.errors }}
 					{{ form.value_3 }}
 					<div class="subTitle">Dependable, self-disciplined</div>
+                    <hr class="divider">
 					<div class="valueSlider" id="value4Slider"></div>
 					{{ form.value_4.errors }}
 					{{ form.value_4 }}
 					<div class="subTitle">Anxious, easily upset</div>
+                    <hr class="divider">
 					<div class="valueSlider" id="value5Slider"></div>
 					{{ form.value_5.errors }}
 					{{ form.value_5 }}
 					<div class="subTitle">Sympathetic, warm</div>
+                    <hr class="divider">
 					<div class="valueSlider" id="value6Slider"></div>
 					{{ form.value_6.errors }}
 					{{ form.value_6 }}
 					<div class="subTitle">Open to new experiences, complex</div>
+                    <hr class="divider">
 					<div class="valueSlider" id="value7Slider"></div>
 					{{ form.value_7.errors }}
 					{{ form.value_7 }}
 					<div class="subTitle">Calm, emotionally stable</div>
+                    <hr class="divider">
 					<div class="valueSlider" id="value8Slider"></div>
 					{{ form.value_8.errors }}
 					{{ form.value_8 }}
 					<div class="subTitle">Extroverted, enthusiastic</div>
+                    <hr class="divider">
 					<div class="valueSlider" id="value9Slider"></div>
 					{{ form.value_9.errors }}
 					{{ form.value_9 }}
 					<div class="subTitle">Critical, quarrelsome</div>
+                    <hr class="divider">
 					<div class="valueSlider" id="value10Slider"></div>
 					{{ form.value_10.errors }}
 					{{ form.value_10 }}
@@ -374,22 +393,27 @@
 				<div class="pageSubtitle" style="margin-bottom: 1em">(0 is not important and 100 is very important):</div>
 				<div>
 					<div class="subTitle">Leisure Pursuits</div>
+                    <hr class="divider">
 					<div id="personalityMetric1Slider" class="personalitySlider"></div>
 					{{ form.metric_1.errors }}
 					{{ form.metric_1 }}
 					<div class="subTitle">Public Service</div>
+                    <hr class="divider">
 					<div id="personalityMetric2Slider" class="personalitySlider"></div>
 					{{ form.metric_2.errors }}
 					{{ form.metric_2 }}
 					<div class="subTitle">Financial Resources</div>
+                    <hr class="divider">
 					<div id="personalityMetric3Slider" class="personalitySlider"></div>
 					{{ form.metric_3.errors }}
 					{{ form.metric_3 }}
 					<div class="subTitle">Family/Friends</div>
+                    <hr class="divider">
 					<div id="personalityMetric4Slider" class="personalitySlider"></div>
 					{{ form.metric_4.errors }}
 					{{ form.metric_4 }}
 					<div class="subTitle">Leadership</div>
+                    <hr class="divider">
 					<div id="personalityMetric5Slider" class="personalitySlider"></div>
 					{{ form.metric_5.errors }}
 					{{ form.metric_5 }}
@@ -406,22 +430,27 @@
 				<div class="pageSubtitle" style="margin-bottom: 1em">(0 is not important and 100 is very important):</div>
 				<div>
 					<div class="subTitle">Being Challenged</div>
+                    <hr class="divider">
 					<div id="personalityMetric6Slider" class="personalitySlider"></div>
 					{{ form.metric_6.errors }}
 					{{ form.metric_6 }}
 					<div class="subTitle">Autonomy</div>
+                    <hr class="divider">
 					<div id="personalityMetric7Slider" class="personalitySlider"></div>
 					{{ form.metric_7.errors }}
 					{{ form.metric_7 }}
 					<div class="subTitle">Recognition</div>
+                    <hr class="divider">
 					<div id="personalityMetric8Slider" class="personalitySlider"></div>
 					{{ form.metric_8.errors }}
 					{{ form.metric_8 }}
 					<div class="subTitle">Job Security</div>
+                    <hr class="divider">
 					<div id="personalityMetric9Slider" class="personalitySlider"></div>
 					{{ form.metric_9.errors }}
 					{{ form.metric_9 }}
 					<div class="subTitle">Relationship/Teams</div>
+                    <hr class="divider">
 					<div id="personalityMetric10Slider" class="personalitySlider"></div>
 					{{ form.metric_10.errors }}
 					{{ form.metric_10 }}

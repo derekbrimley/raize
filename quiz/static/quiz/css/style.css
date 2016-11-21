@@ -78,12 +78,21 @@ ol{
 }
 
 #logo_img{
-	width: 175px;
+	width: 100px;
+    top: 10px;
+    position: relative;
 }
 
 #header_btn_container{
 	display: flex;
 	flex: 1;
+}
+
+.divider {
+    margin: 0;
+    top: 50px;
+    position: relative;
+    color: #e4e7e9;
 }
 
 .menu_btn{
@@ -92,7 +101,7 @@ ol{
 	font-weight: bold;
 	font-size: 1.2em;
 	text-decoration: none;
-	margin: 10px;
+	margin: 5px;
 	margin-left: 0px;
 	margin-right: 0px;
     padding: 20px 15px;
