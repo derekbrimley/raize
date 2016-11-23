@@ -142,11 +142,29 @@ ol{
 }
 
 #img_container{
-	background-image: url('/static/raizeme/images/ryan.jpg');
+	background-image: url('/static/raizeme/images/first_image.jpg');
 	background-repeat: no-repeat;
 	height:600px;
 	background-size: 100% auto;
 	background-position: center 38%;
+}
+
+#img_container_2{
+    background-image: url('/static/raizeme/images/second_image.jpeg');
+    background-repeat: no-repeat;
+    height:600px;
+    background-size: 100% auto;
+    background-position: center 38%;
+    display: none;
+}
+
+#img_container_3{
+    background-image: url('/static/raizeme/images/third_image.jpeg');
+    background-repeat: no-repeat;
+    height:600px;
+    background-size: 100% auto;
+    background-position: center 38%;
+    display: none;
 }
 
 #img_content{

@@ -19,6 +19,8 @@ $(function () {
 		}
 	});
 
+    
+    
 	$("#type_container").hide();
 	$("#valuesContainer").hide();
 	$("#interestsContainer").hide();
@@ -880,8 +882,8 @@ var goToInterests = function(){
 }
 
 var interestValidation = function(){
-	if((!interest_1_value && !interest_2_value && !interest_3_value && !interest_4_value && !interest_5_value && !interest_6_value) || (!interest_7_value && !interest_8_value && !interest_9_value && !interest_10_value && !interest_11_value && !interest_12_value) || (!interest_13_value && !interest_14_value && !interest_15_value && !interest_16_value && !interest_17_value && !interest_18_value)){
-		alert("You must select at least one interest from each section.");
+	if(!interest_1_value && !interest_2_value && !interest_3_value && !interest_4_value && !interest_5_value && !interest_6_value && !interest_7_value && !interest_8_value && !interest_9_value && !interest_10_value && !interest_11_value && !interest_12_value && !interest_13_value && !interest_14_value && !interest_15_value && !interest_16_value && !interest_17_value && !interest_18_value){
+		alert("You must select at least one interest.");
 	} else {
         quizPages.current().hide();
         quizPages.next().show();
@@ -893,66 +895,66 @@ var interestValidation = function(){
 	}
 
 }
-
-var goToPersonality = function(){
-	if(!adjective_1_value && !adjective_2_value && !adjective_3_value && !adjective_4_value && !adjective_5_value && !adjective_6_value && !adjective_7_value && !adjective_8_value && !adjective_9_value && !adjective_10_value && !adjective_11_value && !adjective_12_value){
-		alert("You must select two adjectives.");
-		$("#registrationContainer").hide();
-		$("#adjectivesContainer").show();
-	}else if(adjective_1_value + adjective_2_value + adjective_3_value + adjective_4_value + adjective_5_value + adjective_6_value + adjective_7_value + adjective_8_value + adjective_9_value + adjective_10_value + adjective_11_value + adjective_12_value > 2){
-		alert("You may only select two adjectives.");
-		$("#registrationContainer").hide();
-		$("#adjectivesContainer").show();
-	}else {
-		$("#adjectivesContainer").hide();
-		$("#personalityContainer").show();
-		scrollToTop();
-		$("#progressbar").progressbar("value",50);
-	}
-}
-
-var goToPersonality2 = function(){
-	$("#personalityContainer").hide();
-
-	$("#personalityContainer2").show();
-	scrollToTop();
-	$("#progressbar").progressbar("value",62.5);
-}
-
-var goToPersonality3 = function(){
-	$("#personalityContainer2").hide();
-
-	$("#personalityContainer3").show();
-	scrollToTop();
-	$("#progressbar").progressbar("value",75);
-}
-
-var goToMajors = function(){
-	$("#personalityContainer3").hide();
-
-	$("#registrationContainer").show();
-	scrollToTop();
-	$("#progressbar").progressbar("value",87.5);
-}
-
-var goToEnd = function(){
-
-}
-
-var backToHome = function(){
-	$("#valuesContainer").hide();
-	$("#quizTitle").show();
-	$("#homeContainer").show();
-	scrollToTop();
-    $("#progressbar").progressbar("value",0);
-}
-
-var backToValues = function(){
-	$("#interestsContainer").hide();
-	$("#valuesContainer").show();
-	scrollToTop();
-    $("#progressbar").progressbar("value",12.5);
-}
+//
+//var goToPersonality = function(){
+//	if(!adjective_1_value && !adjective_2_value && !adjective_3_value && !adjective_4_value && !adjective_5_value && !adjective_6_value && !adjective_7_value && !adjective_8_value && !adjective_9_value && !adjective_10_value && !adjective_11_value && !adjective_12_value){
+//		alert("You must select two adjectives.");
+//		$("#registrationContainer").hide();
+//		$("#adjectivesContainer").show();
+//	}else if(adjective_1_value + adjective_2_value + adjective_3_value + adjective_4_value + adjective_5_value + adjective_6_value + adjective_7_value + adjective_8_value + adjective_9_value + adjective_10_value + adjective_11_value + adjective_12_value > 2){
+//		alert("You may only select two adjectives.");
+//		$("#registrationContainer").hide();
+//		$("#adjectivesContainer").show();
+//	}else {
+//		$("#adjectivesContainer").hide();
+//		$("#personalityContainer").show();
+//		scrollToTop();
+//		$("#progressbar").progressbar("value",50);
+//	}
+//}
+//
+//var goToPersonality2 = function(){
+//	$("#personalityContainer").hide();
+//
+//	$("#personalityContainer2").show();
+//	scrollToTop();
+//	$("#progressbar").progressbar("value",62.5);
+//}
+//
+//var goToPersonality3 = function(){
+//	$("#personalityContainer2").hide();
+//
+//	$("#personalityContainer3").show();
+//	scrollToTop();
+//	$("#progressbar").progressbar("value",75);
+//}
+//
+//var goToMajors = function(){
+//	$("#personalityContainer3").hide();
+//
+//	$("#registrationContainer").show();
+//	scrollToTop();
+//	$("#progressbar").progressbar("value",87.5);
+//}
+//
+//var goToEnd = function(){
+//
+//}
+//
+//var backToHome = function(){
+//	$("#valuesContainer").hide();
+//	$("#quizTitle").show();
+//	$("#homeContainer").show();
+//	scrollToTop();
+//    $("#progressbar").progressbar("value",0);
+//}
+//
+//var backToValues = function(){
+//	$("#interestsContainer").hide();
+//	$("#valuesContainer").show();
+//	scrollToTop();
+//    $("#progressbar").progressbar("value",12.5);
+//}
 
 var submitQuiz = function(){
 

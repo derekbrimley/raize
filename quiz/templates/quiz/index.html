@@ -2,6 +2,20 @@
 {% load staticfiles %}
 {% block body %}
 
+<script>
+    
+    $("#slideshow > div:gt(0)").hide();
+    setInterval(function() { 
+        $('#slideshow > div:first')
+            .hide()
+            .next()
+            .show()
+            .end()
+            .appendTo('#slideshow');
+    },  5000);
+    
+    
+</script>
 <div id="banner_container">
 <!--	<style>
 		.carousel-inner > .item > img,
@@ -45,11 +59,18 @@
 	    </a>
 	</div>
 -->
+    <div id="slideshow">
+        <div id="img_container">
+        </div>
 
-	<div id="img_container">
-	</div>
+        <div id="img_container_2">
+        </div>
 
-	<div id="img_content">
+        <div id="img_container_3">
+        </div>
+    </div>
+
+    <div id="img_content">
 		<div class="img_subtitle">FOCUS ON A FUTURE THAT FITS</div>
 		<a id="img_btn" href="quiz/">Start Your Journey</a>
 	</div>
@@ -60,7 +81,7 @@
 <div id="about_raize_container">
 	<div class="about_title">ABOUT RAIZE</div>
 	<div id="about_txt">Raize is a platform designed to help students find the right details to make wise and informed decisions for college, major, and company. It uniquely integrates self-assessment with crowd-sourced information to offer users the most insightful suggestions for college and beyond.</div>
-	<div id="about_subtitle">Click <span class="link_txt"><a style="text-decoration:none;color:#2EA1A7" href="quiz/">HERE</a></span> to create your profile by completing a quick 8 minute self-assessment and begin to discover a future that fits you.</div>
+	<div id="about_subtitle">Click <span class="link_txt"><a style="text-decoration:none;color:#2EA1A7" href="quiz/">HERE</a></span> to create your profile by completing a quick 5 minute self-assessment and begin to discover a future that fits you.</div>
 </div>
 </section>
 <div id="changing_banner">
