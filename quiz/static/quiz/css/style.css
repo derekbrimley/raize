@@ -67,9 +67,7 @@ ol{
 }
 */
 #header{
-	width: 100%;
 	display: flex;
-	flex-direction: column;
 	align-items: center;
 }
 
@@ -79,8 +77,8 @@ ol{
 
 #logo_img{
 	width: 100px;
-    top: 10px;
     position: relative;
+    left: 200px;
 }
 
 #header_btn_container{

@@ -975,3 +975,6 @@ def get_majors(u_id):
 #TODO: For the new algorithm, need to create a new table from the alumni table. Run the regression algorithm for each of the alumni, which will create additional 69 columns for each alumni. Then, when a new user submits, find the top 5 majors using regression algorithm, and then find the probabilities from those 5 majors in the alumni table. Then, find the euclidean distance between the 5. then go through and find the difference between the euclidean distance of the alumni and the new user. You will have a list of differences, get the smallest 8, and find the majors for those alumni. Those are the ones you display.
 
 #TODO: run 30% of alumni through the algorithm, find their top 8, and make a report of their top 8 and their actual major.
+
+def forgot_password(request):
+    return render(request, 'login/forgot_password.html')
