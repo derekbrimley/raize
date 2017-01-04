@@ -119,28 +119,28 @@
 <div class="progress-label">0%</div>
 </section>
 <div id="mainContainer">
-	<div id="homeContainer">
-        <div id="quizTitle">Welcome to the Raize Self Assessment!</div>
-		<div class="quizContainer firstPage">
-            {{ form.email.errors }}
-			<div>This 8-minute survey will help you understand your attributes and better identify a future that fits. The progress bar at the top will let you know how much you have left to complete.</div><br>
-			<div>At the end of the questionnaire, we'll send you the results and provide two ways to gather additional information from those that know you well. Enjoy!</div>
+<div id="homeContainer">
+    <div id="quizTitle">Welcome to the Raize Self Assessment!</div>
+    <div class="quizContainer firstPage">
+        {{ form.email.errors }}
+        <div>This 8-minute survey will help you understand your attributes and better identify a future that fits. The progress bar at the top will let you know how much you have left to complete.</div><br>
+        <div>At the end of the questionnaire, we'll send you the results and provide two ways to gather additional information from those that know you well. Enjoy!</div>
 <!--
-			<div id="quizChoiceBtnContainer">
-				You are looking to choose a...
-				<input type="checkbox" class="check" id="choiceBtnCollege">
-				<label for="choiceBtnCollege" class="choiceBtn">College</label>
-				<input type="checkbox" class="check" id="choiceBtnMajor">
-				<label for="choiceBtnMajor" class="choiceBtn">Major</label>
-				<input type="checkbox" class="check" id="choiceBtnCompany">
-				<label for="choiceBtnCompany" class="choiceBtn">Company</label>
-			</div>
+        <div id="quizChoiceBtnContainer">
+            You are looking to choose a...
+            <input type="checkbox" class="check" id="choiceBtnCollege">
+            <label for="choiceBtnCollege" class="choiceBtn">College</label>
+            <input type="checkbox" class="check" id="choiceBtnMajor">
+            <label for="choiceBtnMajor" class="choiceBtn">Major</label>
+            <input type="checkbox" class="check" id="choiceBtnCompany">
+            <label for="choiceBtnCompany" class="choiceBtn">Company</label>
+        </div>
 -->
-		</div>
-		<div class="buttonContainer startContainer">
-			<button id="startBtn" class="nextBtn formBtn startBtn" onClick="nextPage()">Start</button>
-		</div>
-	</div>
+    </div>
+    <div class="buttonContainer startContainer">
+        <button id="startBtn" class="nextBtn formBtn startBtn" onClick="nextPage()">Start</button>
+    </div>
+</div>
 	<form id="quiz_form" action="/quiz/" method="post">
 		{% csrf_token %}
 		<div id="valuesContainer">
@@ -324,7 +324,7 @@
 			<button class="nextBtn formBtn" type="button" id="interestsNextBtn" onClick="goToAdjectives()">Next</button>
 		</div>
 		-->
-		</div>
+<!--		</div>-->
 		<div id="adjectivesContainer">
 			<div class="quizContainer">
                 <div class="pageTitle pageMargin"><span class="quiz_page_title">SELECT AT LEAST TWO ADJECTIVES THAT DESCRIBE YOU:</div>

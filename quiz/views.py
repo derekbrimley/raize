@@ -4,7 +4,7 @@ from django.shortcuts import render
 from django.conf import settings
 from django.core.mail import send_mail
 from django.contrib.auth import authenticate, login, logout
-from .forms import QuizForm, FriendQuizForm, LoginForm, EditProfileForm, EmailForm
+from .forms import QuizForm, FriendQuizForm, EmailForm
 from quiz.models import Response, MyUser, UserScore, AlumniScores, MajorScores, UserMajors
 from django.core.urlresolvers import reverse
 import random
@@ -70,39 +70,6 @@ def profile(request):
 		
 	return render(request, 'quiz/profile.html', context)
 
-
-def user_login(request):
-	
-	if request.method == 'POST':
-		form = LoginForm(request.POST)
-		
-		username = request.POST['username']
-		password = request.POST['password']
-		user = authenticate(username=username, password=password)
-		if user is not None:
-			print("user is not none")
-
-			if user.is_active:
-				print("user is active")
-				login(request, user)
-				return HttpResponseRedirect('/')
-			else:
-				print("user is not active")
-				return HttpResponseRedirect('/login/')
-		else:
-			print("user is none")
-	else:
-
-		print("not post")
-		form = LoginForm()
-	
-	return render(request, 'quiz/login.html', {'form': form})
-
-
-def user_logout(request):
-	logout(request)
-	return HttpResponseRedirect('/')
-		
 
 
 def quiz(request):

@@ -1,88 +1,215 @@
 {% extends 'quiz/base.html' %}
 {% load staticfiles %}
 {% block body %}
+<style>
+#footer {
+	display: none;
+}
+
+#social_container {
+	color:blue;
+}
+
+.ui-slider-horizontal {
+	height: 1em;
+	border-top:1px solid #d1d7da;
+	border-left:0px solid #d1d7da;
+	border-right:0px solid #d1d7da;
+	border-bottom:0px solid #d1d7da;
+}
+
+.ui-widget-content {
+	background: transparent;
+}
+
+.horizontal .ui-slider-labels {
+	height: 0em;
+	top:.4em;
+}
+.horizontal .ui-slider-label-ticks {
+	border-radius: 50%;
+	background: #d1d7da;
+	width:0.8em;
+	height: 0.8em;
+	top:-0.4em;
+	cursor: pointer !important;
+}
+.ui-slider-wrapper .ui-slider-horizontal {
+	padding-right: 8px;
+}
+
+.horizontal .ui-slider-label-ticks:hover {
+	border-radius: 50%;
+	background: #d1d7da;
+	width:0.8em;
+	height: 0.8em;
+	top:-0.4em;
+	cursor: pointer !important;
+}
+
+
+.ui-slider .ui-slider-handle {
+	border-radius: 50%;
+	background: #000;
+	width: 1.2em;
+	height: 1.2em;
+	top:-0.6em;
+	box-shadow: 0em 0em 0em 0.2em #fff inset;
+    background: #000 !important;
+    border: 2px solid #000 !important;
+    color: #FFF !important;
+    cursor: pointer !important;
+}
+.horizontal .ui-slider-label-ticks span {
+	left:0.5em;
+	top:1.8em;
+	font-family:Source Sans Pro;
+	font-size:15px;
+	font-weight: lighter;
+	cursor: auto;
+}
+
+.ui-slider-wrapper.horizontal {
+	top:2.5em;
+	height:8em;
+}
+
+.subTitle {
+	font-family:Source Sans Pro;
+	font-size:25px;
+	color: #214b5e;
+	text-align: center;
+	font-weight: lighter;
+}
+#progressbar {
+	width:800px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.ui-progressbar {
+	height: 2px !important;
+}
+.ui-progressbar:after {
+	background-color:#214b5e;
+    width:1.0em;
+    height:1.0em;
+    display:block;
+    float:right;
+    border-radius:50%;
+    z-index: 1000;
+}
+
+#progressbar .ui-widget-header {
+	background: #2bb3b3 !important;
+}
+    
+    #personalityContainer .ui-state-default, #personalityContainer2 .ui-state-default, #valuesContainer .ui-state-default {
+    top: -2px;
+}
+    
+.ui-slider-wrapper .ui-slider-horizontal{
+    border-top: 0px solid #d1d7da;
+    cursor: pointer;
+}
+
+</style>
+<section>
+<div id="progressbar"></div>
+<div class="progress-label">0%</div>
+</section>
 <div id="mainContainer">
-		<div id="quizTitle">Raize Me</div>
-		<div id="homeContainer">
-			<div class="quizContainer firstPage">
-				<div>This 8 minute survey will help {{ first_name }} understand their attributes and better identify a future that fits. The progress bar at the top will let you know how much you have left to complete.</div><br>
-				<div>At the end of the questionnaire, we'll send {{ first_name }} the results. Enjoy!</div>
+    <div id="homeContainer">
+    <div id="quizTitle">Welcome to the Raize Self Assessment!</div>
+    <div class="quizContainer firstPage">
+        {{ form.email.errors }}
+        <div>This 8-minute survey will help you understand your attributes and better identify a future that fits. The progress bar at the top will let you know how much you have left to complete.</div><br>
+        <div>At the end of the questionnaire, we'll send you the results and provide two ways to gather additional information from those that know you well. Enjoy!</div>
 <!--
-				<div id="quizChoiceBtnContainer">
-					{{ first_name }} is looking to choose a...
-					<input type="checkbox" class="check" id="choiceBtnCollege">
-					<label for="choiceBtnCollege" class="choiceBtn">College</label>
-					<input type="checkbox" class="check" id="choiceBtnMajor">
-					<label for="choiceBtnMajor" class="choiceBtn">Major</label>
-					<input type="checkbox" class="check" id="choiceBtnCompany">
-					<label for="choiceBtnCompany" class="choiceBtn">Company</label>
-				</div>
+        <div id="quizChoiceBtnContainer">
+            You are looking to choose a...
+            <input type="checkbox" class="check" id="choiceBtnCollege">
+            <label for="choiceBtnCollege" class="choiceBtn">College</label>
+            <input type="checkbox" class="check" id="choiceBtnMajor">
+            <label for="choiceBtnMajor" class="choiceBtn">Major</label>
+            <input type="checkbox" class="check" id="choiceBtnCompany">
+            <label for="choiceBtnCompany" class="choiceBtn">Company</label>
+        </div>
 -->
-			</div>
-			<div class="buttonContainer startContainer">
-				<button id="startBtn" class="nextBtn formBtn startBtn" onClick="startQuiz()">Start</button>
-			</div>
-		</div>
+    </div>
+    <div class="buttonContainer startContainer">
+        <button id="startBtn" class="nextBtn formBtn startBtn" onClick="nextPage()">Start</button>
+    </div>
+</div>
 	<form id="quiz_form" action="/quiz/{{form.user_id.value}}/friend_submit/" method="post">
 		{% csrf_token %}
 		<input name="user_id" id="user_id" type="hidden" value="{{form.user_id.value}}">
 		<div id="valuesContainer">
 			<div class="quizContainer">
-				<div class="pageTitle">Values</div>
-				<div class="pageSubtitle">{{ first_name }} is...</div>
-				<div>
-					<div>Conventional, uncreative</div>
+				<div class="pageTitle pageMargin"><span class="quiz_page_title">{{ first_name }} IS...</span></div>
+				<div class="interests">
+					<div class="subTitle">Conventional, uncreative</div>
+                    <hr class="divider">
 					<div class="valueSlider" id="value1Slider"></div>
 					{{ form.value_1.errors }}
 					{{ form.value_1 }}
-					<div>Disorganized, careless</div>
+					<div class="subTitle">Disorganized, careless</div>
+                    <hr class="divider">
 					<div class="valueSlider" id="value2Slider"></div>
 					{{ form.value_2.errors }}
 					{{ form.value_2 }}
-					<div>Reserved, quiet</div>
+					<div class="subTitle">Reserved, quiet</div>
+                    <hr class="divider">
 					<div class="valueSlider" id="value3Slider"></div>
 					{{ form.value_3.errors }}
 					{{ form.value_3 }}
-					<div>Dependable, self-disciplined</div>
+					<div class="subTitle">Dependable, self-disciplined</div>
+                    <hr class="divider">
 					<div class="valueSlider" id="value4Slider"></div>
 					{{ form.value_4.errors }}
 					{{ form.value_4 }}
-					<div>Anxious, easily upset</div>
+					<div class="subTitle">Anxious, easily upset</div>
+                    <hr class="divider">
 					<div class="valueSlider" id="value5Slider"></div>
 					{{ form.value_5.errors }}
 					{{ form.value_5 }}
-					<div>Sympathetic, warm</div>
+					<div class="subTitle">Sympathetic, warm</div>
+                    <hr class="divider">
 					<div class="valueSlider" id="value6Slider"></div>
 					{{ form.value_6.errors }}
 					{{ form.value_6 }}
-					<div>Open to new experiences, complex</div>
+					<div class="subTitle">Open to new experiences, complex</div>
+                    <hr class="divider">
 					<div class="valueSlider" id="value7Slider"></div>
 					{{ form.value_7.errors }}
 					{{ form.value_7 }}
-					<div>Calm, emotionally stable</div>
+					<div class="subTitle">Calm, emotionally stable</div>
+                    <hr class="divider">
 					<div class="valueSlider" id="value8Slider"></div>
 					{{ form.value_8.errors }}
 					{{ form.value_8 }}
-					<div>Extroverted, enthusiastic</div>
+					<div class="subTitle">Extroverted, enthusiastic</div>
+                    <hr class="divider">
 					<div class="valueSlider" id="value9Slider"></div>
 					{{ form.value_9.errors }}
 					{{ form.value_9 }}
-					<div>Critical, quarrelsome</div>
+					<div class="subTitle">Critical, quarrelsome</div>
+                    <hr class="divider">
 					<div class="valueSlider" id="value10Slider"></div>
 					{{ form.value_10.errors }}
 					{{ form.value_10 }}
 				</div>
 			</div>
 			<div class="buttonContainer">
-				<button class="backBtn formBtn" type="button" id="valuesBackBtn" onClick="backToHome()">Back</button>
-				<button class="nextBtn formBtn" type="button" id="valuesNextBtn" onClick="goToInterests()">Next</button>
+                <button class="backBtn formBtn" type="button" id="valuesBackBtn" onClick="prevPage()">Back</button>
+                <button class="nextBtn formBtn" type="button" id="valuesNextBtn" onClick="nextPage()">Next</button>
 			</div>
 		</div>
 		<div id="interestsContainer">
 			<div class="quizContainer">
-				<div class="pageTitle">Interests</div>
-				<div class="pageSubtitle">Select all the activities that {{ first_name }} enjoys doing:</div>
-				<div class="interests">
+				<div class="pageTitle pageMargin"><span class="quiz_page_title">INDICATE ALL ACTIVITIES THAT {{ first_name }} ENJOYs DOING (AT LEAST ONE PER SECTION):</div>
+                <div style="font-family:Source Sans Pro;font-size:16px;color: #2bb3b3;text-align: center;font-weight: bold;text-decoration: underline;margin-bottom: 2em">SECTION 1</div>
+                    <div class="interests">
 					<input type="checkbox" class="check" id="interest1Checkbox" />
 					<label for="interest1Checkbox" class="checkboxLabel">Solve complex, abstract problems</label>
 					{{ form.interest_1.errors }}
@@ -108,12 +235,73 @@
 					{{ form.interest_6.errors }}
 					{{ form.interest_6 }}
 				</div>
+
+				<hr>
+
+				<div style="font-family:Source Sans Pro;font-size:16px;color: #2bb3b3;text-align: center;font-weight: bold;text-decoration: underline;margin-bottom: 2em">SECTION 2</div>
+				<div class="interests">
+					<input type="checkbox" class="check" id="interest7Checkbox" />
+					<label for="interest7Checkbox" class="checkboxLabel">Understand scientific theories</label>
+					{{ form.interest_7.errors }}
+					{{ form.interest_7 }}
+					<input type="checkbox" class="check" id="interest8Checkbox" />
+					<label for="interest8Checkbox" class="checkboxLabel">Mediate disputes</label>
+					{{ form.interest_8.errors }}
+					{{ form.interest_8 }}
+					<input type="checkbox" class="check" id="interest9Checkbox" />
+					<label for="interest9Checkbox" class="checkboxLabel">Design fashions or interiors</label>
+					{{ form.interest_9.errors }}
+					{{ form.interest_9 }}
+					<input type="checkbox" class="check" id="interest10Checkbox" />
+					<label for="interest10Checkbox" class="checkboxLabel">Solve electrical problems</label>
+					{{ form.interest_10.errors }}
+					{{ form.interest_10 }}
+					<input type="checkbox" class="check" id="interest11Checkbox" />
+					<label for="interest11Checkbox" class="checkboxLabel">Write effective business letters</label>
+					{{ form.interest_11.errors }}
+					{{ form.interest_11 }}
+					<input type="checkbox" class="check" id="interest12Checkbox" />
+					<label for="interest12Checkbox" class="checkboxLabel">Initiate projects</label>
+					{{ form.interest_12.errors }}
+					{{ form.interest_12 }}
+				</div>
+
+				<hr>
+
+				<div style="font-family:Source Sans Pro;font-size:16px;color: #2bb3b3;text-align: center;font-weight: bold;text-decoration: underline;margin-bottom:2em ">SECTION 3</div>
+				<div class="interests">
+					<input type="checkbox" class="check" id="interest13Checkbox" />
+					<label for="interest13Checkbox" class="checkboxLabel">Assembe a product</label>
+					{{ form.interest_13.errors }}
+					{{ form.interest_13 }}
+					<input type="checkbox" class="check" id="interest14Checkbox" />
+					<label for="interest14Checkbox" class="checkboxLabel">Compute and record statistical data</label>
+					{{ form.interest_14.errors }}
+					{{ form.interest_14 }}
+					<input type="checkbox" class="check" id="interest15Checkbox" />
+					<label for="interest15Checkbox" class="checkboxLabel">Collect information for analysis</label>
+					{{ form.interest_15.errors }}
+					{{ form.interest_15 }}
+					<input type="checkbox" class="check" id="interest16Checkbox" />
+					<label for="interest16Checkbox" class="checkboxLabel">Sell houses</label>
+					{{ form.interest_16.errors }}
+					{{ form.interest_16 }}
+					<input type="checkbox" class="check" id="interest17Checkbox" />
+					<label for="interest17Checkbox" class="checkboxLabel">Organize an activity for disabled people</label>
+					{{ form.interest_17.errors }}
+					{{ form.interest_17 }}
+					<input type="checkbox" class="check" id="interest18Checkbox" />
+					<label for="interest18Checkbox" class="checkboxLabel">Design theater sets</label>
+					{{ form.interest_18.errors }}
+					{{ form.interest_18 }}
+				</div>
 			</div>
 			<div class="buttonContainer">
-				<button class="backBtn formBtn" type="button" onClick="backToValues()">Back</button>
-				<button class="nextBtn formBtn" type="button" id="interestsNextBtn" onClick="goToInterests2()">Next</button>
+                <button class="backBtn formBtn" type="button" onClick="prevPage()">Back</button>
+                <button class="nextBtn formBtn" type="button" id="interestsNextBtn" onClick="nextPage()">Next</button>
 			</div>
 		</div>
+<!--
 		<div id="interestsContainer2">
 			<div class="quizContainer">
 				<div class="pageTitle">Interests</div>
@@ -150,6 +338,8 @@
 				<button class="nextBtn formBtn" type="button" id="interestsNextBtn" onClick="goToInterests3()">Next</button>
 			</div>
 		</div>
+-->
+<!--
 		<div id="interestsContainer3">
 		<div class="quizContainer">
 			<div class="pageTitle">Interests</div>
@@ -186,10 +376,12 @@
 			<button class="nextBtn formBtn" type="button" id="interestsNextBtn" onClick="goToAdjectives()">Next</button>
 		</div>
 		</div>
+-->
 		<div id="adjectivesContainer">
 			<div class="quizContainer">
-				<div class="pageTitle">Interests</div>
-				<div class="pageSubtitle">Select two adjectives that describe {{ first_name }}:</div>
+                <div class="pageTitle pageMargin"><span class="quiz_page_title">SELECT AT LEAST TWO ADJECTIVES THAT DESCRIBE {{ first_name }}:</div>
+
+				<div class="pageSubtitle">{{ first_name }} IS</div>
 				<div class="interests">
 					<input type="checkbox" class="check" id="adjective1Checkbox" />
 					<label for="adjective1Checkbox" class="checkboxLabel">Coordinated</label>
@@ -239,82 +431,92 @@
 					<label for="adjective12Checkbox" class="checkboxLabel">Creative</label>
 					{{ form.adjective_12.errors }}
 					{{ form.adjective_12 }}
-					
+
 				</div>
 			</div>
 			<div class="buttonContainer">
-				<button class="backBtn formBtn" type="button" onClick="backToInterests3()">Back</button>
-				<button class="nextBtn formBtn" type="button" id="adjectivesNextBtn" onClick="goToPersonality()">Next</button>
+                <button class="backBtn formBtn" type="button" onClick="prevPage()">Back</button>
+                <button class="nextBtn formBtn" type="button" id="adjectivesNextBtn" onClick="nextPage()">Next</button>
 			</div>
 		</div>
 		<div id="personalityContainer">
 			<div class="quizContainer">
-				<div class="pageTitle">Personality</div>
-				<div class="pageSubtitle">Please indicate the magnitude of importance in {{ first_name }}'s life from 0 to 100:</div>
+                <div class="pageTitle pageMargin"><span class="quiz_page_title">INDICATE THE MAGNITUDE OF IMPORTANCE IN {{ first_name}}'s LIFE:</span></div>
+				<div class="pageSubtitle" style="margin-bottom: 1em">(0 is not important and 100 is very important):</div>
 				<div>
-					<div>Leisure Pursuits</div>
+					<div class="subTitle">Leisure Pursuits</div>
+                    <hr class="divider">
 					<div id="personalityMetric1Slider" class="personalitySlider"></div>
 					{{ form.metric_1.errors }}
 					{{ form.metric_1 }}
-					<div>Public Service</div>
+					<div class="subTitle">Public Service</div>
+                    <hr class="divider">
 					<div id="personalityMetric2Slider" class="personalitySlider"></div>
 					{{ form.metric_2.errors }}
 					{{ form.metric_2 }}
-					<div>Financial Resources</div>
+					<div class="subTitle">Financial Resources</div>
+                    <hr class="divider">
 					<div id="personalityMetric3Slider" class="personalitySlider"></div>
 					{{ form.metric_3.errors }}
 					{{ form.metric_3 }}
-					<div>Family/Friends</div>
+					<div class="subTitle">Family/Friends</div>
+                    <hr class="divider">
 					<div id="personalityMetric4Slider" class="personalitySlider"></div>
 					{{ form.metric_4.errors }}
 					{{ form.metric_4 }}
-					<div>Leadership</div>
+					<div class="subTitle">Leadership</div>
+                    <hr class="divider">
 					<div id="personalityMetric5Slider" class="personalitySlider"></div>
 					{{ form.metric_5.errors }}
 					{{ form.metric_5 }}
 				</div>
 			</div>
 			<div class="buttonContainer">
-				<button class="backBtn formBtn" type="button" onClick="backToAdjectives()">Back</button>
-				<button class="nextBtn formBtn" type="button" id="personalityNextBtn" onClick="goToPersonality2()">Next</button>
+                <button class="backBtn formBtn" type="button" onClick="prevPage()">Back</button>
+                <button class="nextBtn formBtn" type="button" id="personalityNextBtn" onClick="nextPage()">Next</button>
 			</div>
 		</div>
 		<div id="personalityContainer2">
 			<div class="quizContainer">
-				<div class="pageTitle">Personality</div>
-				<div class="pageSubtitle">Please indicate the magnitude of importance in {{ first_name }}'s life from 0 to 100:</div>
+                <div class="pageTitle pageMargin"><span class="quiz_page_title">INDICATE THE MAGNITUDE OF IMPORTANCE IN {{ first_name}}'s LIFE:</span></div>
+				<div class="pageSubtitle" style="margin-bottom: 1em">(0 is not important and 100 is very important):</div>
 				<div>
-					<div>Being Challenged</div>
+					<div class="subTitle">Being Challenged</div>
+                    <hr class="divider">
 					<div id="personalityMetric6Slider" class="personalitySlider"></div>
 					{{ form.metric_6.errors }}
 					{{ form.metric_6 }}
-					<div>Autonomy</div>
+					<div class="subTitle">Autonomy</div>
+                    <hr class="divider">
 					<div id="personalityMetric7Slider" class="personalitySlider"></div>
 					{{ form.metric_7.errors }}
 					{{ form.metric_7 }}
-					<div>Recognition</div>
+					<div class="subTitle">Recognition</div>
+                    <hr class="divider">
 					<div id="personalityMetric8Slider" class="personalitySlider"></div>
 					{{ form.metric_8.errors }}
 					{{ form.metric_8 }}
-					<div>Job Security</div>
+					<div class="subTitle">Job Security</div>
+                    <hr class="divider">
 					<div id="personalityMetric9Slider" class="personalitySlider"></div>
 					{{ form.metric_9.errors }}
 					{{ form.metric_9 }}
-					<div>Relationship/Teams</div>
+					<div class="subTitle">Relationship/Teams</div>
+                    <hr class="divider">
 					<div id="personalityMetric10Slider" class="personalitySlider"></div>
 					{{ form.metric_10.errors }}
 					{{ form.metric_10 }}
 				</div>
 			</div>
 			<div class="buttonContainer">
-				<button class="backBtn formBtn" type="button" onClick="backToPersonality()">Back</button>
-				<button class="nextBtn formBtn" type="button" id="personalityNextBtn2" onClick="goToPersonality3()">Next</button>
+                <button class="backBtn formBtn" type="button" onClick="prevPage()">Back</button>
+                <button class="nextBtn formBtn" type="button" id="personalityNextBtn2" onClick="nextPage()">Next</button>
 			</div>
 		</div>
 		<div id="personalityContainer3">
 			<div class="quizContainer">
-				<div class="pageTitle">Personality</div>
-				<div class="pageSubtitle">Please rank the importance to {{ first_name }} of each criterion when deciding to pursue an occupation immediately out of school by dragging and dropping the options below to sort from most important on top to least important on bottom:</div>
+				<div class="pageTitle pageMargin"><span class="quiz_page_title">INDICATE THE MAGNITUDE OF IMPORTANCE IN {{ first_name }}'s LIFE:</span></div>
+				<div class="pageSubtitle">Please rank the importance of each criterion when deciding to pursue an occupation immediately out of school by dragging and dropping the options below to sort from most important on top to least important on bottom:</div>
 				{{ form.metric_11.errors }}
 				{{ form.metric_11 }}
 				{{ form.metric_12.errors }}
@@ -333,38 +535,29 @@
 				{{ form.metric_18 }}
 				<div>
 					<ol id="sortablePersonality" class="sortable">
-						<li id="metric11" class="ui-state-default sortableItem">
-							<span class="ui-icon ui-icon-arrowthick-2-n-s sortableSpan"></span>Career Growth
-						</li>
-						<li id="metric12" class="ui-state-default sortableItem">
-							<span class="ui-icon ui-icon-arrowthick-2-n-s sortableSpan"></span>Salary
-						</li>
-						<li id="metric13" class="ui-state-default sortableItem">
-							<span class="ui-icon ui-icon-arrowthick-2-n-s sortableSpan"></span>Workload
-						</li>
-						<li id="metric14" class="ui-state-default sortableItem">
-							<span class="ui-icon ui-icon-arrowthick-2-n-s sortableSpan"></span>Difficulty
-						</li>
-						<li id="metric15" class="ui-state-default sortableItem">
-							<span class="ui-icon ui-icon-arrowthick-2-n-s sortableSpan"></span>Prestige
-						</li>
-						<li id="metric16" class="ui-state-default sortableItem">
-							<span class="ui-icon ui-icon-arrowthick-2-n-s sortableSpan"></span>Contribution to Society
-						</li>
-						<li id="metric17" class="ui-state-default sortableItem">
-							<span class="ui-icon ui-icon-arrowthick-2-n-s sortableSpan"></span>Interest in a specific product/service
-						</li>
-						<li id="metric18" class="ui-state-default sortableItem">
-							<span class="ui-icon ui-icon-arrowthick-2-n-s sortableSpan"></span>Location
-						</li>
-						
+						<li id="metric11" class="ui-state-default sortableItem"><span class="ui-icon ui-icon-arrowthick-2-n-s sortableSpan"></span>Career Growth</li>
+
+						<li id="metric12" class="ui-state-default sortableItem"><span class="ui-icon ui-icon-arrowthick-2-n-s sortableSpan"></span>Salary</li>
+
+						<li id="metric13" class="ui-state-default sortableItem"><span class="ui-icon ui-icon-arrowthick-2-n-s sortableSpan"></span>Workload</li>
+
+						<li id="metric14" class="ui-state-default sortableItem"><span class="ui-icon ui-icon-arrowthick-2-n-s sortableSpan"></span>Difficulty</li>
+
+						<li id="metric15" class="ui-state-default sortableItem"><span class="ui-icon ui-icon-arrowthick-2-n-s sortableSpan"></span>Prestige</li>
+
+						<li id="metric16" class="ui-state-default sortableItem"><span class="ui-icon ui-icon-arrowthick-2-n-s sortableSpan"></span>Contribution to Society</li>
+
+						<li id="metric17" class="ui-state-default sortableItem"><span class="ui-icon ui-icon-arrowthick-2-n-s sortableSpan"></span>Interest in a specific product/service</li>
+
+						<li id="metric18" class="ui-state-default sortableItem"><span class="ui-icon ui-icon-arrowthick-2-n-s sortableSpan"></span>Location</li>
+
 					</ol>
 				</div>
-				
+
 			</div>
 			<div class="buttonContainer">
-				<button class="backBtn formBtn" type="button" onClick="backToPersonality2()">Back</button>
-				<button class="nextBtn formBtn" type="button" id="personalityNextBtn2" onClick="submitFriendQuiz()">Submit</button>
+                <button class="backBtn formBtn" type="button" onClick="prevPage()">Back</button>
+                <button class="nextBtn formBtn" type="button" id="personalityNextBtn2" onClick="submitFriendQuiz()">Submit</button>
 			</div>
 		</div>
 <!--
