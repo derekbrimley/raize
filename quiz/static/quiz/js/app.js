@@ -706,7 +706,7 @@ var quizPages = [
     },
     {
         'name': $("#adjectivesContainer"),
-        'errors': undefined
+        'errors': 'adjectiveValidation'
     },
     {
         'name': $("#personalityContainer"),
@@ -830,12 +830,13 @@ var scrollToTop = function(){
 }
 
 var nextPage = function () {
+    console.log('error: ' + quizPages.errors());
     if(quizPages.errors() === undefined){
         quizPages.current().hide();
         quizPages.next().show();
 
         progressbarValue += 12.5;
-        $("#progressbar").progressbar("value",progressbarValue);
+        $("#progressbar").progressbar("value", progressbarValue);
 
         scrollToTop();
     } else {
@@ -862,23 +863,21 @@ var runFunction = function (name) {
     func.apply(window);
 }
 
-var startQuiz = function(){
+var adjectiveValidation = function(){
+    var adj_sum = Boolean(adjective_1_value) + Boolean(adjective_2_value) + Boolean(adjective_3_value) + Boolean(adjective_4_value) + Boolean(adjective_5_value) + Boolean(adjective_6_value) + Boolean(adjective_7_value) + Boolean(adjective_8_value) + Boolean(adjective_9_value) + Boolean(adjective_10_value) + Boolean(adjective_11_value) + Boolean(adjective_12_value);
+    console.log(adj_sum);
+    if(adj_sum < 2){
+        alert("You must select at least two adjectives.");
+    } else {
+        quizPages.current().hide();
+        quizPages.next().show();
 
-    $("#homeContainer").hide();
-    $("#quizTitle").hide();
+        progressbarValue += 12.5;
+        $("#progressbar").progressbar("value", progressbarValue);
 
-    $("#valuesContainer").show();
-    scrollToTop();
+        scrollToTop();
+    }
 
-    $("#progressbar").progressbar("value",12.5);
-}
-
-var goToInterests = function(){
-    $("#valuesContainer").hide();
-
-    $("#interestsContainer").show();
-    scrollToTop();
-    $("#progressbar").progressbar("value",25);
 }
 
 var interestValidation = function(){
@@ -895,66 +894,6 @@ var interestValidation = function(){
     }
 
 }
-//
-//var goToPersonality = function(){
-//	if(!adjective_1_value && !adjective_2_value && !adjective_3_value && !adjective_4_value && !adjective_5_value && !adjective_6_value && !adjective_7_value && !adjective_8_value && !adjective_9_value && !adjective_10_value && !adjective_11_value && !adjective_12_value){
-//		alert("You must select two adjectives.");
-//		$("#registrationContainer").hide();
-//		$("#adjectivesContainer").show();
-//	}else if(adjective_1_value + adjective_2_value + adjective_3_value + adjective_4_value + adjective_5_value + adjective_6_value + adjective_7_value + adjective_8_value + adjective_9_value + adjective_10_value + adjective_11_value + adjective_12_value > 2){
-//		alert("You may only select two adjectives.");
-//		$("#registrationContainer").hide();
-//		$("#adjectivesContainer").show();
-//	}else {
-//		$("#adjectivesContainer").hide();
-//		$("#personalityContainer").show();
-//		scrollToTop();
-//		$("#progressbar").progressbar("value",50);
-//	}
-//}
-//
-//var goToPersonality2 = function(){
-//	$("#personalityContainer").hide();
-//
-//	$("#personalityContainer2").show();
-//	scrollToTop();
-//	$("#progressbar").progressbar("value",62.5);
-//}
-//
-//var goToPersonality3 = function(){
-//	$("#personalityContainer2").hide();
-//
-//	$("#personalityContainer3").show();
-//	scrollToTop();
-//	$("#progressbar").progressbar("value",75);
-//}
-//
-//var goToMajors = function(){
-//	$("#personalityContainer3").hide();
-//
-//	$("#registrationContainer").show();
-//	scrollToTop();
-//	$("#progressbar").progressbar("value",87.5);
-//}
-//
-//var goToEnd = function(){
-//
-//}
-//
-//var backToHome = function(){
-//	$("#valuesContainer").hide();
-//	$("#quizTitle").show();
-//	$("#homeContainer").show();
-//	scrollToTop();
-//    $("#progressbar").progressbar("value",0);
-//}
-//
-//var backToValues = function(){
-//	$("#interestsContainer").hide();
-//	$("#valuesContainer").show();
-//	scrollToTop();
-//    $("#progressbar").progressbar("value",12.5);
-//}
 
 var submitQuiz = function(){
 
@@ -1031,40 +970,9 @@ var submitQuiz = function(){
 }
 
 var submitFriendQuiz = function(){
-    if(!interest_1_value && !interest_2_value && !interest_3_value && !interest_4_value && !interest_5_value && !interest_6_value && !interest_7_value && !interest_8_value && !interest_9_value && !interest_10_value && !interest_11_value && !interest_12_value && !interest_13_value && !interest_14_value && !interest_15_value && !interest_16_value && !interest_17_value && !interest_18_value){
-        alert("You must select at least one interest.");
-        $("#registrationContainer").hide();
-        $("#interestsContainer").show();
-    }else if(!adjective_1_value && !adjective_2_value && !adjective_3_value && !adjective_4_value && !adjective_5_value && !adjective_6_value && !adjective_7_value && !adjective_8_value && !adjective_9_value && !adjective_10_value && !adjective_11_value && !adjective_12_value){
-        alert("You must select two adjectives.");
-        $("#registrationContainer").hide();
-        $("#adjectivesContainer").show();
-    }else if(adjective_1_value + adjective_2_value + adjective_3_value + adjective_4_value + adjective_5_value + adjective_6_value + adjective_7_value + adjective_8_value + adjective_9_value + adjective_10_value + adjective_11_value + adjective_12_value > 2){
-        alert("You may only select two adjectives.");
-        $("#registrationContainer").hide();
-        $("#adjectivesContainer").show();
-    }
-    //    else if(major_1_value == ''){
-    //		alert("You must select at least one major.");
-    //		$("#registrationContainer").hide();
-    //		$("#majorsContainer").show();
-    //	}
-    else{
-        var user_id = $("#user_id").val();
-        var dataString = $("#quiz_form").serialize();
-        console.log(dataString);
-        $("#quiz_form").submit();
-        //		$.ajax({
-        //			method: "POST",
-        //			url: '/quiz/'+user_id+'/friend_submit/',
-        //			data: dataString,
-        //			statusCode: {
-        //				200: function(results){
-        //					$("#mainContainer").html(results);
-        //				}
-        //			}
-        //		});
-    }
+    var dataString = $("#quiz_form").serialize();
+    console.log(dataString);
+    $("#quiz_form").submit();
 }
 
 var emailCheck = function(email){
