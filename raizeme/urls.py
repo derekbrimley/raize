@@ -4,5 +4,6 @@ from django.contrib import admin
 urlpatterns = [
 	url(r'^', include('quiz.urls')),
 	url(r'^quiz/', include('quiz.urls')),
+    url(r'^login/', include('login.urls')),
     url(r'^admin/', include(admin.site.urls)),
 ]
