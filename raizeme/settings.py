@@ -104,8 +104,8 @@ AUTH_PASSWORD_VALIDATORS = (
 )
 
 EMAIL_HOST = 'smtp.sendgrid.net'
-EMAIL_HOST_USER = 'derekbrimley'
-EMAIL_HOST_PASSWORD = 'raizeme2016'
+EMAIL_HOST_USER = 'apikey'
+EMAIL_HOST_PASSWORD = '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'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 
