@@ -1,5 +1,5 @@
 html, body, button{
-	font-family: Dosis, Lato, Helvetica, Arial, sans-serif, serif, 'Josefin Sans', sans-serif;
+	font-family: source sans pro, Dosis, Lato, Helvetica, Arial, sans-serif, serif, 'Josefin Sans', sans-serif;
 }
 
 body{
@@ -191,9 +191,12 @@ ol{
 
 #img_btn{
     cursor: pointer;
+	text-transform: uppercase;
+	font-family: Source Sans Pro;
+	font-weight: bold;
     border: 2px solid #38647F;
     background: #386480;
-    font-size: 30pt;
+    font-size: 12pt;
     color: #FFF;
     border-radius: 10px;
     padding: 10px;
@@ -203,10 +206,15 @@ ol{
 #about_raize_container{
 	text-align: center;
 	margin: 50px 250px;
+	font-family: Source Sans Pro;
+	font-weight: bold;
 }
 
 .about_title{
 	font-size: 30pt;
+	text-transform: uppercase;
+	font-family: Source Sans Pro;
+	font-weight: bold;
     margin: 20px;
     color: #2EA1A7;
 	text-shadow: 2px 2px #395E7B;
@@ -214,10 +222,14 @@ ol{
 
 #about_txt{
 	font-size: 20pt;
+	font-family: Source Sans Pro;
+	font-weight: bold;
 }
 
 #about_subtitle{
 	margin: 20px;
+	font-family: Source Sans Pro;
+	font-weight: bold;
     color: #38637F;
 }
 
