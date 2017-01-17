@@ -142,7 +142,7 @@ ol{
 #img_container{
 	background-image: url('/static/raizeme/images/first_image.jpg');
 	background-repeat: no-repeat;
-	height:520px;
+	height:530px;
 	background-size: 100% auto;
 	background-position: center 38%;
 }
@@ -150,7 +150,7 @@ ol{
 #img_container_2{
     background-image: url('/static/raizeme/images/second_image.jpeg');
     background-repeat: no-repeat;
-    height:520px;
+    height:530px;
     background-size: 100% auto;
     background-position: center 38%;
     display: none;
@@ -159,7 +159,7 @@ ol{
 #img_container_3{
     background-image: url('/static/raizeme/images/third_image.jpeg');
     background-repeat: no-repeat;
-    height:520px;
+    height:530px;
     background-size: 100% auto;
     background-position: center 38%;
     display: none;
@@ -205,6 +205,7 @@ ol{
 
 #about_raize_container{
 	text-align: center;
+	height:260px;
 	margin: 50px 250px;
 	font-family: Source Sans Pro;
 	font-weight: bold;
