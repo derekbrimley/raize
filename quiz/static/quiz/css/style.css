@@ -309,11 +309,11 @@ ol{
 
 .box{
 	text-align:center;
-	flex-basis: 15%;
+	flex-basis: 25%;
 }
 
 .box_img{
-	height:150px;
+	height:100px;
 }
 
 .box_title{
