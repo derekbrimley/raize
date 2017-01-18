@@ -443,6 +443,7 @@ ol{
     margin: 25px;
     background: #2ea1a7;
     border-radius: 5px;
+    justify-content: center
 }
 
 #start_btn:hover{
