@@ -829,9 +829,7 @@ ol{
 	color: #FFF;
 	cursor:pointer;
 }
-.backBtn{
-	background: rgb(43, 179, 179);
-}
+
 
 .emails{
 	display: flex;
@@ -903,8 +901,12 @@ ol{
     background: #2bb3b3;
     cursor: pointer;
 }
-
+.backBtn{
+	font-size: 14pt;
+	background: rgb(43, 179, 179);
+}
 .nextBtn{
+	font-size: 14pt;
 	background: rgb(43, 179, 179);
 }
 
