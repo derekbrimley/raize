@@ -191,9 +191,9 @@ ol{
 
 #img_btn{
     cursor: pointer;
-	text-transform: uppercase;
-	font-family: Source Sans Pro;
-	font-weight: bold;
+    text-transform: uppercase;
+    font-family: Source Sans Pro;
+    font-weight: bold;
     border: 2px solid #38647F;
     background: #386480;
     font-size: 12pt;
@@ -297,9 +297,9 @@ ol{
 
 #raize_different_container{
 	display:flex;
-	margin: 0 100px;
+	margin: 15px 100px;
 	flex-wrap: wrap;
-    justify-content: space-around;
+    
 }
 
 .box{
