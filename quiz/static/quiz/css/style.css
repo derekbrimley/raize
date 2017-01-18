@@ -202,6 +202,10 @@ ol{
     padding: 10px;
 	text-decoration: none;
 }
+#img_btn:hover{
+	background: #2ea1a7;
+	color: #FFF;
+}
 
 #about_raize_container{
 	text-align: center;
