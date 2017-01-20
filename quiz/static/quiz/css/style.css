@@ -109,7 +109,7 @@ ol{
 }
 
 .menu_btn:hover{
-	text-decoration: underline;
+	color: #386480;
 }
 
 .login_btn{
@@ -130,7 +130,7 @@ ol{
 }
 
 .login_btn:hover{
-	text-decoration: underline;
+	color: #386480;
 }
 
 
@@ -185,7 +185,7 @@ ol{
 	font-weight: bold;
 	font-size: 40pt;
     text-shadow: 2px 2px #386581;
-	margin-bottom: 20px;
+	margin-bottom: 120px;
 	margin-top: 20px;
 }
 
@@ -204,6 +204,7 @@ ol{
 }
 #img_btn:hover{
 	background: #FFF;
+	border: 2px solid #FFF;
 	color: #386480;
 }
 
