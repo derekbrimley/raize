@@ -538,24 +538,7 @@
 			</div>
 		</div>
 -->
-	<form id="emailform" action="/quiz/" method="post">
-		{% csrf_token %}
-		<div id="email_form_container">
-			<div class="quizContainer">
-                <div class="pageTitle pageMargin"><span class="quiz_page_title">Email addresses of 6 people who know you well</span></div>
-				<div class="emailform">
-				<input type="hidden" value="{{ id }}" id="userId"/>
-				{{ form }}
-			</div>
-				</div>
-		<div class="buttonContainer">
-			<button class="backBtn formBtn" type="button" onClick="prevPage()">Back</button>
-			<button class="nextBtn formBtn contactEmailBtn" type="button" id="personalityNextBtn2" onClick="nextPage() submitEmails()">Next</button>
-				</div>
-		
 			
-	<form id="quiz_form" action="/quiz/" method="post">
-		{% csrf_token %}		
 		<div id="registrationContainer">
 			<div class="quizContainer">
                 <div class="pageTitle pageMargin"><span class="quiz_page_title">REGISTRATION</span></div>
