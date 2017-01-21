@@ -904,8 +904,9 @@ ol{
     cursor: pointer;
 }
 .backBtn{
-	font-size: 14pt;
-	background: rgb(43, 179, 179);
+	border-radius: 10px;
+    	font-size: 14pt;
+	background: #2bb3b3;
 }
 .nextBtn{
 	font-size: 14pt;
