@@ -544,6 +544,7 @@
 			<div>
 				Write in up to 6 email addresses of people who know you well.
 			</div>
+			<div class="emailform">	
 			<form id="emailForm" action="/results/" method="post">
 				{% csrf_token %}
 				<input type="hidden" value="{{ id }}" id="userId"/>
