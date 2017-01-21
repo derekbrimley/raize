@@ -905,11 +905,12 @@ ol{
 }
 .backBtn{
 	border-radius: 10px;
-    	font-size: 14pt;
+    	font-size: 20pt;
 	background: #2bb3b3;
 }
 .nextBtn{
-	font-size: 14pt;
+	border-radius: 10px;
+	font-size: 20pt;
 	background: rgb(43, 179, 179);
 }
 
