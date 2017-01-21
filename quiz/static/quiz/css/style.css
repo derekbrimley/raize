@@ -646,7 +646,8 @@ ol{
 }
 
 .checkboxLabel{
-	width: 250px;
+	width: 226px;
+	margin: 20px;
 }
 
 #quizChoiceBtnContainer{
