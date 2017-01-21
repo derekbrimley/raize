@@ -611,32 +611,36 @@ ol{
 
 #mainContainer{
 	margin: 50px auto;
-	width: 800px;
+	width: 950px;
 }
 
 #adjectivesContainer{
 	margin: 50px auto;
-	width: 800px;
+	width: 850px;
 }
 
 #personalityContainer{
 	margin: 50px auto;
-	width: 800px;
+	width: 850px;
 }
 
 #personalityContainer2{
 	margin: 50px auto;
-	width: 800px;
+	width: 850px;
 }
 
 #personalityContainer3{
 	margin: 50px auto;
-	width: 800px;
+	width: 850px;
 }
 
+#InterestsContainer{
+	margin: 50px auto;
+	width: 850px;
+}
 #registrationContainer{
 	margin: 50px auto;
-	width: 800px;
+	width: 850px;
 }
 
 #quizTitle{
