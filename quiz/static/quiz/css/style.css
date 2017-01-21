@@ -1056,7 +1056,12 @@ ol{
 }
 
 #email_form_container{
+	
+	bottom margin: 20px;
+	font-size: 40pt;
 	text-align: center;
+	color: #38637f;
+	
 }
 
 #profile_results_container{
