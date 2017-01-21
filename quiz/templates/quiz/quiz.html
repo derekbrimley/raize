@@ -544,16 +544,16 @@
 			<div>
 				Write in up to 6 email addresses of people who know you well.
 			</div>
-			<div class="emailform">	
-			<form id="emailForm" action="/results/" method="post">
+			<div class="emailform" action="/results/" method="post">
 				{% csrf_token %}
 				<input type="hidden" value="{{ id }}" id="userId"/>
 				{{ form }}
-			</form>
+			
 		<div class="buttonContainer">
 			<button class="backBtn formBtn" type="button" onClick="prevPage()">Back</button>
 			<button class="nextBtn formBtn contactEmailBtn" type="button" id="personalityNextBtn2" onClick="nextPage() submitEmails()">Next</button>
 				</div>
+				</form>
 			</div>
 			
 			
