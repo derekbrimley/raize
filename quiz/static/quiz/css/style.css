@@ -685,7 +685,7 @@ ol{
 #interestsContainer .ui-state-default{
 	height: 40px;
 	background: #FFF !important;
-	border: 1px solid #000 !important;
+	border: 1px solid #FFF !important;
 	color: #000 !important;
 	cursor: pointer !important;
 	border-radius: 50px !important;
@@ -722,7 +722,7 @@ ol{
 
 #interestsContainer hr {
 	margin:25px auto;
-	border: 1px solid #000;
+	border: 1px solid #FFF;
 	width: 60%;
 	opacity: .2;
 }
