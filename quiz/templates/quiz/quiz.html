@@ -538,12 +538,14 @@
 			</div>
 		</div>
 -->
+	<form id="emailform" action="/quiz/" method="post">
+		{% csrf_token %}
 		<div id="email_form_container">
 			<div class="quizContainer">
-			<div class="pageTitle pageMargin"><span class="quiz_page_title">Crowdsource</span></div>
-			<div>
-				Write in up to 6 email addresses of people who know you well.
-			</div>
+                <div class="pageTitle pageMargin"><span class="quiz_page_title">Email addresses of 6 people who know you well</span></div>
+				<div class="interests">
+					<div class="subTitle">Conventional, uncreative</div>
+					
 			<div id="emailform" action="/results/" method="post">
 				{% csrf_token %}
 				<input type="hidden" value="{{ id }}" id="userId"/>
