@@ -820,6 +820,7 @@ ol{
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
+	width: 950px;
 }
 
 .formBtn{
@@ -1058,7 +1059,7 @@ ol{
 #email_form_container{
 	
 	bottom margin: 20px;
-	font-size: 40pt;
+	font-size: 20pt;
 	text-align: center;
 	color: #38637f;
 	
