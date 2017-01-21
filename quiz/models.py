@@ -21,10 +21,7 @@ class MyUser(AbstractBaseUser, PermissionsMixin):
 	email_4 = models.EmailField()
 	email_5 = models.EmailField()
 	email_6 = models.EmailField()
-	email_7 = models.EmailField()
-	email_8 = models.EmailField()
-	email_9 = models.EmailField()
-	email_10 = models.EmailField()
+	
 	
 	date_joined = models.DateTimeField(default=timezone.now)
 	
