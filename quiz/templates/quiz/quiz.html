@@ -538,6 +538,24 @@
 			</div>
 		</div>
 -->
+		<div id="email_form_container">
+			<div class="pageTitle pageMargin"><span class="quiz_page_title">Crowdsource</span></div>
+			<div>
+				Write in up to 6 email addresses of people who know you well.
+			</div>
+			<form id="emailForm" action="/results/" method="post">
+				{% csrf_token %}
+				<input type="hidden" value="{{ id }}" id="userId"/>
+				{{ form }}
+			</form>
+		<div class="buttonContainer">
+			<button class="backBtn formBtn" type="button" onClick="prevPage()">Back</button>
+			<button class="nextBtn formBtn contactEmailBtn" type="button" id="personalityNextBtn2" onClick="nextPage() submitEmails()">Next</button>
+				</div>
+			</div>
+			
+			
+			
 		<div id="registrationContainer">
 			<div class="quizContainer">
                 <div class="pageTitle pageMargin"><span class="quiz_page_title">REGISTRATION</span></div>
