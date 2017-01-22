@@ -912,11 +912,13 @@ ol{
     cursor: pointer;
 }
 .backBtn{
+	width: 120px;
 	border-radius: 10px;
     	font-size: 20pt;
 	background: #2bb3b3;
 }
 .nextBtn{
+	width: 120px;
 	border-radius: 10px;
 	font-size: 20pt;
 	background: rgb(43, 179, 179);
