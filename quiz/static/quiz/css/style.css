@@ -958,6 +958,7 @@ ol{
 
 .pageTitle{
 	font-size: 14pt;
+	margin-left: -280px;
 	font-weight: bold;
 	text-align: center;
     margin-bottom: 10px;
