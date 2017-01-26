@@ -109,14 +109,7 @@ ol{
 }
 
 .menu_btn:hover{
-    border: none;
-    font-size: 14pt;
-    margin: 20px;
-    color: #2EA1A7;
-    padding: 10px;
-    background: #FFF;
-    border-radius: 10px;
-    cursor: pointer;
+    color: #386480;
 }
 
 .login_btn{
