@@ -102,8 +102,8 @@ ol{
 	margin: 5px;
 	margin-left: 0px;
 	margin-right: 0px;
-    padding: 20px 15px;
-    color: #2bb3b3;
+    	padding: 20px 15px;
+    	color: #2bb3b3;
 	cursor: pointer;
 	text-align: center;
 }
@@ -669,8 +669,9 @@ ol{
 
 .checkboxLabel{
 	font size: 30pt !important;
-	width: 300px;
+	width: 260px;
 	margin: 10px 2px;
+	border: 1px solid #FFF !important;
 }
 
 #quizChoiceBtnContainer{
