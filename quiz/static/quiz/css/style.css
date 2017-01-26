@@ -109,7 +109,14 @@ ol{
 }
 
 .menu_btn:hover{
-	color: #386480;
+	color: #border: none;
+    font-size: 14pt;
+    margin: 20px;
+    color: #2EA1A7;
+    padding: 10px;
+    background: #FFF;
+    border-radius: 10px;
+    cursor: pointer;;
 }
 
 .login_btn{
@@ -351,12 +358,23 @@ ol{
 	border: none;
     font-size: 14pt;
     margin: 20px;
+    color: #386480;
+    padding: 10px;
+    background: #FFF;
+    border-radius: 10px;
+    cursor: pointer;
+}
+#grad_btn:hover{
+	border: none;
+    font-size: 14pt;
+    margin: 20px;
     color: #2EA1A7;
     padding: 10px;
     background: #FFF;
     border-radius: 10px;
     cursor: pointer;
 }
+
 
 #footer{
 	display: flex;
