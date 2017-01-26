@@ -342,14 +342,14 @@ ol{
 }
 
 #grad_txt{
-	font-size: 14px;
+	font-size: 18px;
 	margin: 20px;
 	color: #FFF;
 }
 
 #grad_btn{
 	border: none;
-    font-size: 20pt;
+    font-size: 14pt;
     margin: 20px;
     color: #2EA1A7;
     padding: 10px;
