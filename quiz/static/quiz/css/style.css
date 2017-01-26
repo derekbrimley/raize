@@ -778,7 +778,7 @@ ol{
 #adjectivesContainer .ui-state-default{
 	height: 40px;
 	background: #FFF !important;
-	border: 1px solid #2bb3b3 !important;
+	border: 1px solid #FFF !important;
 	color: #000 !important;
 	cursor: pointer !important;
 	border-radius: 50px !important;
