@@ -195,17 +195,17 @@ ol{
     font-family: Source Sans Pro;
     font-weight: bold;
     border: 2px solid #38647F;
-    background: #386480;
+    background: #FFF;
     font-size: 12pt;
-    color: #FFF;
+    color: #386480;
     border-radius: 10px;
-    padding: 10px;
+    padding: 10px 20px;
 	text-decoration: none;
 }
 #img_btn:hover{
-	background: #FFF;
-	border: 2px solid #FFF;
-	color: #386480;
+	background: #386480;
+	border: 2px solid #386480;
+	color: #FFF;
 }
 
 #about_raize_container{
