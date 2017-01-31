@@ -185,7 +185,7 @@ ol{
 	font-weight: bold;
 	font-size: 40pt;
     text-shadow: 2px 2px #386581;
-	margin-bottom: 70px;
+	margin-bottom: 10px;
 	margin-top: 20px;
 }
 
@@ -521,7 +521,7 @@ ol{
 #member_box_container{
 	display: flex;
 	justify-content: space-around;
-	margin: 50px 200px;
+	margin: 5px 200px;
 }
 
 .member_box{
