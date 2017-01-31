@@ -32,10 +32,11 @@
 			</div>
 
 			<div id="header_btn_container">
+				<a href="/" class="menu_btn">Home</a>
 				<a href="/students/" class="menu_btn">Student</a>
 				<a href="/graduates/" class="menu_btn">Graduate</a>
 				<a href="/team/" class="menu_btn">About</a>
-				<a href="/" class="menu_btn">Home</a>
+				
 				{% if user.is_authenticated %}
 					<a href="/profile/" class="menu_btn">Profile</a>
 					<a href="/logout/" class="menu_btn">Log Out</a>
