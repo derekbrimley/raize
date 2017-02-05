@@ -72,6 +72,7 @@ class Migration(migrations.Migration):
                 ('email_3', models.EmailField(max_length=254)),
                 ('email_4', models.EmailField(max_length=254)),
                 ('email_5', models.EmailField(max_length=254)),
+                ('email_6', models.EmailField(max_length=254)),
                 ('user', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='quiz.MyUser')),
             ],
         ),
