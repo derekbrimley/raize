@@ -541,6 +541,18 @@
 		</div>
 -->
 			
+			<div id="email_form_container">
+				<div>
+					Write in up to 6 email addresses of people who know you well.
+				</div>
+				<form id="emailForm" action="/results/" method="post">
+					{% csrf_token %}
+					<input type="hidden" value="{{ id }}" id="userId"/>
+					{{ form }}
+				</form>
+				<button type='button' class="contactEmailBtn" onClick="submitEmails()">Send</button>
+			</div>
+			
 		<div id="registrationContainer">
 			<div class="quizContainer">
                 <div class="pageTitle pageMargin"><span class="quiz_page_title">REGISTRATION</span></div>
