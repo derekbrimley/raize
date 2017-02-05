@@ -12,34 +12,14 @@ class Migration(migrations.Migration):
     ]
 
     operations = [
-        migrations.AddField(
-            model_name='response',
-            name='email_10',
-            field=models.EmailField(default='', max_length=254),
-            preserve_default=False,
-        ),
+        
         migrations.AddField(
             model_name='response',
             name='email_6',
             field=models.EmailField(default='', max_length=254),
             preserve_default=False,
         ),
-        migrations.AddField(
-            model_name='response',
-            name='email_7',
-            field=models.EmailField(default='', max_length=254),
-            preserve_default=False,
-        ),
-        migrations.AddField(
-            model_name='response',
-            name='email_8',
-            field=models.EmailField(default='', max_length=254),
-            preserve_default=False,
-        ),
-        migrations.AddField(
-            model_name='response',
-            name='email_9',
-            field=models.EmailField(default='', max_length=254),
-            preserve_default=False,
-        ),
+        
+        
+       
     ]
