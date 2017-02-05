@@ -38,6 +38,22 @@ class Migration(migrations.Migration):
             model_name='response',
             name='email_6',
         ),
+        migrations.RemoveField(
+            model_name='response',
+            name='email_7',
+        ),
+        migrations.RemoveField(
+            model_name='response',
+            name='email_8',
+        ),
+        migrations.RemoveField(
+            model_name='response',
+            name='email_9',
+        ),
+        migrations.RemoveField(
+            model_name='response',
+            name='email_10',
+        ),
         
         
         migrations.AddField(
@@ -74,6 +90,30 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='myuser',
             name='email_6',
+            field=models.EmailField(default='', max_length=254),
+            preserve_default=False,
+        ),
+         migrations.AddField(
+            model_name='myuser',
+            name='email_7',
+            field=models.EmailField(default='', max_length=254),
+            preserve_default=False,
+        ),
+        migrations.AddField(
+            model_name='myuser',
+            name='email_8',
+            field=models.EmailField(default='', max_length=254),
+            preserve_default=False,
+        ),
+        migrations.AddField(
+            model_name='myuser',
+            name='email_9',
+            field=models.EmailField(default='', max_length=254),
+            preserve_default=False,
+        ),
+        migrations.AddField(
+            model_name='myuser',
+            name='email_10',
             field=models.EmailField(default='', max_length=254),
             preserve_default=False,
         ),
