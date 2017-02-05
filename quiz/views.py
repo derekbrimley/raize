@@ -313,6 +313,10 @@ def send_emails(request, id):
 		email_4 = form.cleaned_data['email_4']
 		email_5 = form.cleaned_data['email_5']
 		email_6 = form.cleaned_data['email_6']
+		email_7 = form.cleaned_data['email_3']
+		email_8 = form.cleaned_data['email_4']
+		email_9 = form.cleaned_data['email_5']
+		email_10 = form.cleaned_data['email_6']
 		
 
 		print("Email 1: " + email_1)
@@ -321,6 +325,10 @@ def send_emails(request, id):
 		print("Email 4: " + email_4)
 		print("Email 5: " + email_5)
 		print("Email 6: " + email_6)
+		print("Email 7: " + email_7)
+		print("Email 8: " + email_8)
+		print("Email 9: " + email_9)
+		print("Email 10: " + email_10)
 		
 		
 		u = MyUser.objects.get(id=id)
@@ -331,6 +339,10 @@ def send_emails(request, id):
 		u.email_4 = email_4
 		u.email_5 = email_5
 		u.email_6 = email_6
+		u.email_7 = email_7
+		u.email_8 = email_8
+		u.email_9 = email_9
+		u.email_10 = email_10
 		
 		u.save()
 
@@ -340,7 +352,7 @@ def send_emails(request, id):
 		text_message = full_name + ' wants to find a future that fits their unique situation and attributes. Raize is a service that collects current criteria for students by issuing self and crowd-sourced questionnaires. This information allows the student to understand more about themselves and how they fit relevant to their situation. This student has selected you as someone who understands them well and would like you to take 4 minutes to complete a questionnaire about their attributes. The questionnaire is completely anonymous and can be started by clicking the link: http://raizeme.herokuapp.com/quiz/' + str(id) + '/'
 		from_email = 'raizemeapp@gmail.com'
 		
-		emails = [email_1, email_2, email_3, email_4, email_5, email_6]
+		emails = [email_1, email_2, email_3, email_4, email_5, email_6,email_7, email_8, email_9, email_10]
 		
 		recipients = []
 		for email in emails:
