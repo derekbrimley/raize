@@ -153,6 +153,10 @@ class EmailForm(forms.Form):
 	email_4 = forms.CharField(required=False,label='Email', max_length=100,widget=forms.TextInput(attrs={'class': 'contactEmailInput'}))
 	email_5 = forms.CharField(required=False,label='Email', max_length=100,widget=forms.TextInput(attrs={'class': 'contactEmailInput'}))
 	email_6 = forms.CharField(required=False,label='Email', max_length=100,widget=forms.TextInput(attrs={'class': 'contactEmailInput'}))
+	email_7 = forms.CharField(required=False,label='Email', max_length=100,widget=forms.TextInput(attrs={'class': 'contactEmailInput'}))
+	email_8 = forms.CharField(required=False,label='Email', max_length=100,widget=forms.TextInput(attrs={'class': 'contactEmailInput'}))
+	email_9 = forms.CharField(required=False,label='Email', max_length=100,widget=forms.TextInput(attrs={'class': 'contactEmailInput'}))
+	email_10 = forms.CharField(required=False,label='Email', max_length=100,widget=forms.TextInput(attrs={'class': 'contactEmailInput'}))
 	
 
 class LoginForm(forms.Form):
